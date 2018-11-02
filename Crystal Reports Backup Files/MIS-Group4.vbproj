@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73161492-2237-44BB-9BF8-2AD45FF8E260}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Master_Inventory_System_Group4.My.MyApplication</StartupObject>
+    <RootNamespace>Master_Inventory_System_Group4</RootNamespace>
+    <AssemblyName>Master_Inventory_System-Group4</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Master_Inventory_System-Group4.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Master_Inventory_System-Group4.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>619E60D38531506354FFC62C74D7334097F8A87C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MIS-Group4_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>untitled.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CBAInventoryDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CBAInventoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="clsItemData.vb" />
+    <Compile Include="CategoryEditList.Designer.vb">
+      <DependentUpon>CategoryEditList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryEditList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmEmployee.Designer.vb">
+      <DependentUpon>frmEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmEmployeeDashboard.Designer.vb">
+      <DependentUpon>frmEmployeeDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmEmployeeDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generic\frmCategoryAddEdit.Designer.vb">
+      <DependentUpon>frmCategoryAddEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Generic\frmCategoryAddEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\frmHardware2.Designer.vb">
+      <DependentUpon>frmHardware2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmHardware2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\frmHardwareDashboard.Designer.vb">
+      <DependentUpon>frmHardwareDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmHardwareDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\frmHardwareParts.Designer.vb">
+      <DependentUpon>frmHardwareParts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmHardwareParts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\frmParts.Designer.vb">
+      <DependentUpon>frmParts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmParts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\frmPartsAddEdit.Designer.vb">
+      <DependentUpon>frmPartsAddEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmPartsAddEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\frmPartsCategory.Designer.vb">
+      <DependentUpon>frmPartsCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmPartsCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmAppDashboard.Designer.vb">
+      <DependentUpon>frmAppDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmAppDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmAssignEquipment.Designer.vb">
+      <DependentUpon>frmAssignEquipment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmAssignEquipment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmUserAddEdit.Designer.vb">
+      <DependentUpon>frmUserAddEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmUserAddEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmUserAdministration.Designer.vb">
+      <DependentUpon>frmUserAdministration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmUserAdministration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modMain.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="frmNetworkExtras.Designer.vb">
+      <DependentUpon>frmNetworkExtras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNetworkExtras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHardware.Designer.vb">
+      <DependentUpon>frmHardware.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHardware.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Software\frmSoftware.Designer.vb">
+      <DependentUpon>frmSoftware.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Software\frmSoftware.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Software\frmSoftwareDashboard.Designer.vb">
+      <DependentUpon>frmSoftwareDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Software\frmSoftwareDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CategoryEditList.resx">
+      <DependentUpon>CategoryEditList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmEmployee.resx">
+      <DependentUpon>frmEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmEmployeeDashboard.resx">
+      <DependentUpon>frmEmployeeDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generic\frmCategoryAddEdit.resx">
+      <DependentUpon>frmCategoryAddEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmHardware2.resx">
+      <DependentUpon>frmHardware2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmHardwareDashboard.resx">
+      <DependentUpon>frmHardwareDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmHardwareParts.resx">
+      <DependentUpon>frmHardwareParts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmParts.resx">
+      <DependentUpon>frmParts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmPartsAddEdit.resx">
+      <DependentUpon>frmPartsAddEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmPartsCategory.resx">
+      <DependentUpon>frmPartsCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmAppDashboard.resx">
+      <DependentUpon>frmAppDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmAssignEquipment.resx">
+      <DependentUpon>frmAssignEquipment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmUserAddEdit.resx">
+      <DependentUpon>frmUserAddEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmUserAdministration.resx">
+      <DependentUpon>frmUserAdministration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNetworkExtras.resx">
+      <DependentUpon>frmNetworkExtras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHardware.resx">
+      <DependentUpon>frmHardware.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CBAInventoryDataSet.xsc">
+      <DependentUpon>CBAInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CBAInventoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CBAInventoryDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CBAInventoryDataSet.xss">
+      <DependentUpon>CBAInventoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MIS-Group4_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="untitled.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
