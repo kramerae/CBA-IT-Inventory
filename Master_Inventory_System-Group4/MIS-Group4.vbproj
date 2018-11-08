@@ -135,6 +135,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CBAInventoryDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CBAInventoryDataSet.vb">
+      <DependentUpon>CBAInventoryDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="clsItemData.vb" />
     <Compile Include="CategoryEditList.Designer.vb">
       <DependentUpon>CategoryEditList.vb</DependentUpon>

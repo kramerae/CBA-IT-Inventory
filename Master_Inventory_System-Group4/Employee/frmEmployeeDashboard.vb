@@ -60,6 +60,7 @@ Public Class frmEmployeeDashboard
             cmbSearchLastName_Load()
             cmbSearchListServ_Load()
             cmbSearchADGroup_Load()
+            cmbSearchRoom_Load()
 
         Catch ex As Exception
             HandleException(Me.Name, ex)
@@ -240,6 +241,11 @@ Public Class frmEmployeeDashboard
             'para = CreateParameter("@txtEmailAccountName", SqlDbType.VarChar, ParameterDirection.Input, GetStringID(cboSearchEmailAccounts))
             para = CreateParameter("@txtEmailAccountName", SqlDbType.VarChar, ParameterDirection.Input, "")
             qryTemp.Parameters.Add(para)
+
+            para = New SqlParameter()
+            para = CreateParameter("@txtRoom", SqlDbType.VarChar, ParameterDirection.Input, GetStringID(cmbSearchRoom))
+            qryTemp.Parameters.Add(para)
+
 
             objConn.Open()
 
@@ -454,8 +460,24 @@ Public Class frmEmployeeDashboard
             cmbSearchADGroup.DropDownStyle = ComboBoxStyle.DropDown
             cmbSearchADGroup.AutoCompleteSource = AutoCompleteSource.ListItems
 
-            LoadComboBox(cmbSearchADGroup, "qryCBOSearchADGroup_Populate")
+            'LoadComboBox(cmbSearchADGroup, "qryCBOSearchADGroup_Populate")
             'cboSearchADGroups.SelectedIndex = 0
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        Finally
+        End Try
+    End Sub
+
+    Private Sub cmbSearchRoom_Load()
+
+        Try
+            cmbSearchRoom.Items.Clear()
+            'Room Auto Complete
+            cmbSearchRoom.AutoCompleteMode = AutoCompleteMode.Append
+            cmbSearchRoom.DropDownStyle = ComboBoxStyle.DropDown
+            cmbSearchRoom.AutoCompleteSource = AutoCompleteSource.ListItems
+
+            LoadComboBox(cmbSearchRoom, "qryCBOOffice_Populate")
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally
@@ -463,5 +485,5 @@ Public Class frmEmployeeDashboard
     End Sub
 #End Region
 
-    
+
 End Class
