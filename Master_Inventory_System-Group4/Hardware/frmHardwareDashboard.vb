@@ -231,7 +231,7 @@ Public Class frmHardwareDashboard
             While rsTemp.Read
                 dr = dt.NewRow()
                 dr("PK_autHardwareID") = rsTemp.Item("PK_autHardwareID")
-                dr("txtHardwareName") = rsTemp.Item("txtComputerName")
+                dr("txtHardwareName") = rsTemp.Item("txtDeviceName")
                 dr("txtHardwareTypeName") = rsTemp.Item("txtHardwareTypeName")
                 dr("txtManufacturerName") = rsTemp.Item("txtManufacturerName")
                 dr("txtModelName") = rsTemp.Item("txtModelName")
