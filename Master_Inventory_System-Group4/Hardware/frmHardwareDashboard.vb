@@ -14,6 +14,9 @@ Public Class frmHardwareDashboard
             LoadComboBox(cmbHardwareType, "qryCBOHardwareType_Populate")
             LoadComboBox(cmbSerialNumber, "qryCBOSerialNumber_Populate")
             LoadComboBox(cmbServiceTag, "qryCBOtxtServiceTag_Populate")
+            LoadComboBox(cmbManufacturer, "qryCBOManufacturer_Populate")
+            LoadComboBox(cmbModelNumber, "qryCBOModelNumber_Populate")
+            LoadComboBox(cmbModelName, "qryCBOModelName_Populate")
 
         Catch ex As Exception
             HandleException(Me.Name, ex)
@@ -228,7 +231,7 @@ Public Class frmHardwareDashboard
             While rsTemp.Read
                 dr = dt.NewRow()
                 dr("PK_autHardwareID") = rsTemp.Item("PK_autHardwareID")
-                dr("txtHardwareName") = rsTemp.Item("txtHardwareName")
+                dr("txtHardwareName") = rsTemp.Item("txtComputerName")
                 dr("txtHardwareTypeName") = rsTemp.Item("txtHardwareTypeName")
                 dr("txtManufacturerName") = rsTemp.Item("txtManufacturerName")
                 dr("txtModelName") = rsTemp.Item("txtModelName")
