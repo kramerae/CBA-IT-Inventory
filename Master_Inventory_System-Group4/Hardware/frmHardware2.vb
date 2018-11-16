@@ -35,6 +35,14 @@ Public Class frmHardware2
             If m_lngHardwareID > 0 Then
                 Hardware_Populate()
             End If
+
+            If txtAssigned.Text = "No" Then
+                btnUnassign.Enabled = False
+                btnAssign.Enabled = True
+            Else
+                btnUnassign.Enabled = True
+                btnAssign.Enabled = False
+            End If
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally
@@ -65,10 +73,22 @@ Public Class frmHardware2
             HandleException(Me.Name, ex)
         End Try
     End Sub
+
+    Private Sub btnUnassign_Click(sender As Object, e As EventArgs) Handles btnUnassign.Click
+        Dim message As String = "Are you sure you want to unassign " + txtFirstName.Text.Trim + " " + txtLastName.Text.Trim + " from " + txtDeviceName.Text.Trim
+        MessageBox.Show(message, "Unassign Hardware", MessageBoxButtons.YesNo)
+        Try
+            UnassignHardware_Save()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+        ' MsgBox("Unassigned successful.", MsgBoxStyle.Exclamation, "Validation Message")
+        'Me.Close()
+    End Sub
 #End Region
 
 #Region "Populate/Save/Validate"
-   
+
     Private Sub Hardware_Populate()
         Dim objConn As SqlConnection = Nothing
         Dim qryTemp As SqlCommand = Nothing
@@ -123,10 +143,16 @@ Public Class frmHardware2
                 txtPrinterType.Text = rsTemp.Item("txtPrinterType")
                 txtBlackInk.Text = rsTemp.Item("txtBlackInk")
                 txtColorInk.Text = rsTemp.Item("txtColorInk")
+                txtAssigned.Text = rsTemp.Item("txtAssign")
+                txtLastName.Text = rsTemp.Item("txtLastName")
+                txtFirstName.Text = rsTemp.Item("txtFirstName")
+                txtRoom.Text = rsTemp.Item("txtOffice")
+                txtDepartment.Text = rsTemp.Item("txtDepartment")
                 If rsTemp.Item("PK_autIPAddressID") > 0 Then
                     LoadIPComboBox(cmbIPAddress, "qryCBOIPAddress_Populate", rsTemp.Item("PK_autIPAddressID"))
                     SetIntegerID(cmbIPAddress, rsTemp.Item("PK_autIPAddressID"))
                 End If
+                m_lngEmployeeID = rsTemp.Item("PK_autEmployeeID")
             End While
 
 
@@ -206,6 +232,42 @@ Public Class frmHardware2
         End Try
     End Sub
 
+    Private Sub UnassignHardware_Save()
+        Dim objConn As SqlConnection = Nothing
+        Dim qryTemp As SqlCommand = Nothing
+        Dim para As SqlParameter = Nothing
+        Dim rsTemp As SqlDataReader = Nothing
+
+        Try
+            objConn = New SqlConnection()
+            objConn.ConnectionString = g_ConnectionString
+
+            qryTemp = New SqlCommand()
+            qryTemp.Connection = objConn
+            qryTemp.CommandType = CommandType.StoredProcedure
+            qryTemp.CommandTimeout = 60
+            qryTemp.CommandText = "qryAssignEquipment_Update"
+            qryTemp.Parameters.Add(CreateParameter("@lngEmployee", SqlDbType.Int, ParameterDirection.Input, m_lngEmployeeID))
+            qryTemp.Parameters.Add(CreateParameter("@lngHardware", SqlDbType.Int, ParameterDirection.Input, m_lngHardwareID))
+            qryTemp.Parameters.Add(CreateParameter("@ysnAssign", SqlDbType.Bit, ParameterDirection.Input, 0))
+            qryTemp.Parameters.Add(CreateParameter("@lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
+            qryTemp.Parameters.Add(CreateParameter("@txtHardwareName", SqlDbType.VarChar, ParameterDirection.Input, txtDeviceName.Text.Trim))
+
+            objConn.Open()
+            qryTemp.ExecuteNonQuery()
+
+            objConn.Close()
+            qryTemp.Dispose()
+
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        Finally
+            Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
+            Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
+            Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
+            'Me.Dispose()
+        End Try
+    End Sub
 #End Region
 
 #Region "Utility"
@@ -237,6 +299,8 @@ Public Class frmHardware2
             HandleException(Me.Name, ex)
         End Try
     End Sub
+
+
 
 #End Region
 

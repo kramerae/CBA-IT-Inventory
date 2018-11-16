@@ -75,11 +75,24 @@ Partial Class frmHardware2
         Me.lblBlack = New System.Windows.Forms.Label()
         Me.txtPrinterType = New System.Windows.Forms.TextBox()
         Me.lblType = New System.Windows.Forms.Label()
+        Me.gbxAssignment = New System.Windows.Forms.GroupBox()
+        Me.txtFirstName = New System.Windows.Forms.TextBox()
+        Me.txtLastName = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txtRoom = New System.Windows.Forms.TextBox()
+        Me.txtDepartment = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtAssigned = New System.Windows.Forms.TextBox()
+        Me.btnUnassign = New System.Windows.Forms.Button()
         Me.gbxGeneral.SuspendLayout()
         Me.gbxComputer.SuspendLayout()
         Me.gbxNetwork.SuspendLayout()
         Me.gbxMonitor.SuspendLayout()
         Me.gbxPrinter.SuspendLayout()
+        Me.gbxAssignment.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbHardwareType
@@ -280,7 +293,7 @@ Partial Class frmHardware2
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(77, 390)
+        Me.btnUpdate.Location = New System.Drawing.Point(70, 390)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.TabIndex = 24
@@ -289,7 +302,7 @@ Partial Class frmHardware2
         '
         'btnAssign
         '
-        Me.btnAssign.Location = New System.Drawing.Point(222, 390)
+        Me.btnAssign.Location = New System.Drawing.Point(173, 390)
         Me.btnAssign.Name = "btnAssign"
         Me.btnAssign.Size = New System.Drawing.Size(75, 23)
         Me.btnAssign.TabIndex = 25
@@ -412,7 +425,7 @@ Partial Class frmHardware2
         '
         Me.gbxNetwork.Controls.Add(Me.Label9)
         Me.gbxNetwork.Controls.Add(Me.cmbIPAddress)
-        Me.gbxNetwork.Location = New System.Drawing.Point(12, 241)
+        Me.gbxNetwork.Location = New System.Drawing.Point(872, 12)
         Me.gbxNetwork.Name = "gbxNetwork"
         Me.gbxNetwork.Size = New System.Drawing.Size(140, 69)
         Me.gbxNetwork.TabIndex = 37
@@ -563,12 +576,123 @@ Partial Class frmHardware2
         Me.lblType.TabIndex = 0
         Me.lblType.Text = "Type"
         '
+        'gbxAssignment
+        '
+        Me.gbxAssignment.Controls.Add(Me.txtFirstName)
+        Me.gbxAssignment.Controls.Add(Me.txtLastName)
+        Me.gbxAssignment.Controls.Add(Me.Label13)
+        Me.gbxAssignment.Controls.Add(Me.Label14)
+        Me.gbxAssignment.Controls.Add(Me.Label16)
+        Me.gbxAssignment.Controls.Add(Me.Label17)
+        Me.gbxAssignment.Controls.Add(Me.txtRoom)
+        Me.gbxAssignment.Controls.Add(Me.txtDepartment)
+        Me.gbxAssignment.Controls.Add(Me.Label19)
+        Me.gbxAssignment.Controls.Add(Me.txtAssigned)
+        Me.gbxAssignment.Location = New System.Drawing.Point(12, 241)
+        Me.gbxAssignment.Name = "gbxAssignment"
+        Me.gbxAssignment.Size = New System.Drawing.Size(409, 117)
+        Me.gbxAssignment.TabIndex = 40
+        Me.gbxAssignment.TabStop = False
+        Me.gbxAssignment.Text = "Assignment"
+        '
+        'txtFirstName
+        '
+        Me.txtFirstName.Location = New System.Drawing.Point(277, 36)
+        Me.txtFirstName.Name = "txtFirstName"
+        Me.txtFirstName.Size = New System.Drawing.Size(121, 20)
+        Me.txtFirstName.TabIndex = 30
+        '
+        'txtLastName
+        '
+        Me.txtLastName.Location = New System.Drawing.Point(143, 36)
+        Me.txtLastName.Name = "txtLastName"
+        Me.txtLastName.Size = New System.Drawing.Size(121, 20)
+        Me.txtLastName.TabIndex = 31
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(6, 16)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(56, 13)
+        Me.Label13.TabIndex = 21
+        Me.Label13.Text = "Assigned?"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(140, 16)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(58, 13)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "Last Name"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(274, 16)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(57, 13)
+        Me.Label16.TabIndex = 3
+        Me.Label16.Text = "First Name"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(6, 64)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(35, 13)
+        Me.Label17.TabIndex = 29
+        Me.Label17.Text = "Room"
+        '
+        'txtRoom
+        '
+        Me.txtRoom.Location = New System.Drawing.Point(9, 83)
+        Me.txtRoom.Name = "txtRoom"
+        Me.txtRoom.Size = New System.Drawing.Size(121, 20)
+        Me.txtRoom.TabIndex = 28
+        '
+        'txtDepartment
+        '
+        Me.txtDepartment.Location = New System.Drawing.Point(143, 83)
+        Me.txtDepartment.Name = "txtDepartment"
+        Me.txtDepartment.Size = New System.Drawing.Size(121, 20)
+        Me.txtDepartment.TabIndex = 10
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(140, 64)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(62, 13)
+        Me.Label19.TabIndex = 12
+        Me.Label19.Text = "Department"
+        '
+        'txtAssigned
+        '
+        Me.txtAssigned.Location = New System.Drawing.Point(9, 36)
+        Me.txtAssigned.Name = "txtAssigned"
+        Me.txtAssigned.Size = New System.Drawing.Size(121, 20)
+        Me.txtAssigned.TabIndex = 20
+        '
+        'btnUnassign
+        '
+        Me.btnUnassign.Location = New System.Drawing.Point(275, 390)
+        Me.btnUnassign.Name = "btnUnassign"
+        Me.btnUnassign.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.btnUnassign.Size = New System.Drawing.Size(75, 23)
+        Me.btnUnassign.TabIndex = 41
+        Me.btnUnassign.Text = "Unassign"
+        Me.btnUnassign.UseVisualStyleBackColor = True
+        '
         'frmHardware2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Menu
         Me.ClientSize = New System.Drawing.Size(997, 442)
+        Me.Controls.Add(Me.btnUnassign)
+        Me.Controls.Add(Me.gbxAssignment)
         Me.Controls.Add(Me.gbxPrinter)
         Me.Controls.Add(Me.gbxMonitor)
         Me.Controls.Add(Me.gbxNetwork)
@@ -588,6 +712,8 @@ Partial Class frmHardware2
         Me.gbxMonitor.PerformLayout()
         Me.gbxPrinter.ResumeLayout(False)
         Me.gbxPrinter.PerformLayout()
+        Me.gbxAssignment.ResumeLayout(False)
+        Me.gbxAssignment.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -644,4 +770,16 @@ Partial Class frmHardware2
     Friend WithEvents txtHDD As System.Windows.Forms.TextBox
     Friend WithEvents txtMemory As System.Windows.Forms.TextBox
     Friend WithEvents txtAspectRatio As System.Windows.Forms.TextBox
+    Friend WithEvents gbxAssignment As GroupBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents txtRoom As TextBox
+    Friend WithEvents txtDepartment As TextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents txtAssigned As TextBox
+    Friend WithEvents txtFirstName As TextBox
+    Friend WithEvents txtLastName As TextBox
+    Friend WithEvents btnUnassign As Button
 End Class
