@@ -69,6 +69,7 @@ Public Class frmHardware2
             frmAssignEquipment.Hardware = m_lngHardwareID
             frmAssignEquipment.Employee = m_lngEmployeeID
             frmAssignEquipment.ShowDialog()
+            Hardware_Save()
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
@@ -76,13 +77,19 @@ Public Class frmHardware2
 
     Private Sub btnUnassign_Click(sender As Object, e As EventArgs) Handles btnUnassign.Click
         Dim message As String = "Are you sure you want to unassign " + txtFirstName.Text.Trim + " " + txtLastName.Text.Trim + " from " + txtDeviceName.Text.Trim
-        MessageBox.Show(message, "Unassign Hardware", MessageBoxButtons.YesNo)
+        Dim dlgR As DialogResult
+        dlgR = MessageBox.Show(message, "Unassign Hardware", MessageBoxButtons.YesNo)
         Try
-            UnassignHardware_Save()
+            If dlgR = DialogResult.Yes Then
+                UnassignHardware_Save()
+                MsgBox("Unassigned successful.", MsgBoxStyle.Exclamation, "Validation Message")
+                btnAssign.Enabled = True
+                btnUnassign.Enabled = False
+            End If
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
-        ' MsgBox("Unassigned successful.", MsgBoxStyle.Exclamation, "Validation Message")
+        Hardware_Populate()
         'Me.Close()
     End Sub
 #End Region
