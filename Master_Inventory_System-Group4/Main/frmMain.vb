@@ -360,6 +360,15 @@ Public Class frmMain
         End Try
     End Sub
 
+    Private Sub SoftwareTypeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SoftwareTypeToolStripMenuItem.Click
+        Try
+            frmNetworkExtras.FormMode = "EditSoftwareType"
+            frmNetworkExtras.ShowDialog()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
     Private Sub StateTypeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StateToolStripMenuItem.Click
         Try
             frmNetworkExtras.FormMode = "EditState"
@@ -436,7 +445,9 @@ Public Class frmMain
             HandleException(Me.Name, ex)
         End Try
     End Sub
+
+
 #End Region
 
-    
+
 End Class

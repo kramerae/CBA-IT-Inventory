@@ -69,6 +69,7 @@ Partial Class frmMain
         Me.btnChildClose = New System.Windows.Forms.Button()
         Me.lblBanner = New System.Windows.Forms.Label()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.SoftwareTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMain.SuspendLayout()
         Me.pnlBanner.SuspendLayout()
         Me.SuspendLayout()
@@ -178,7 +179,7 @@ Partial Class frmMain
         '
         'MaintenanceToolStripMenuItem
         '
-        Me.MaintenanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActiveDirectoryToolStripMenuItem, Me.EducationLevelToolStripMenuItem, Me.EmailAccountsToolStripMenuItem, Me.ListServToolStripMenuItem, Me.MappedDrivesToolStripMenuItem, Me.ToolStripSeparator1, Me.DepartmentToolStripMenuItem, Me.TitleToolStripMenuItem, Me.ToolStripSeparator2, Me.BuildingToolStripMenuItem, Me.OfficeToolStripMenuItem, Me.OfficeSubLettersToolStripMenuItem, Me.ToolStripSeparator3, Me.HardwareTypeToolStripMenuItem, Me.ManufacturerToolStripMenuItem, Me.IPAddressToolStripMenuItem, Me.OSTypeToolStripMenuItem, Me.ToolStripSeparator4, Me.StateToolStripMenuItem, Me.PartsToolStripMenuItem, Me.PartsCategoriesToolStripMenuItem})
+        Me.MaintenanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActiveDirectoryToolStripMenuItem, Me.EducationLevelToolStripMenuItem, Me.EmailAccountsToolStripMenuItem, Me.ListServToolStripMenuItem, Me.MappedDrivesToolStripMenuItem, Me.ToolStripSeparator1, Me.DepartmentToolStripMenuItem, Me.TitleToolStripMenuItem, Me.ToolStripSeparator2, Me.BuildingToolStripMenuItem, Me.OfficeToolStripMenuItem, Me.OfficeSubLettersToolStripMenuItem, Me.ToolStripSeparator3, Me.HardwareTypeToolStripMenuItem, Me.ManufacturerToolStripMenuItem, Me.IPAddressToolStripMenuItem, Me.OSTypeToolStripMenuItem, Me.SoftwareTypeToolStripMenuItem, Me.ToolStripSeparator4, Me.StateToolStripMenuItem, Me.PartsToolStripMenuItem, Me.PartsCategoriesToolStripMenuItem})
         Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
         Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(88, 20)
         Me.MaintenanceToolStripMenuItem.Text = "&Maintenance"
@@ -186,123 +187,123 @@ Partial Class frmMain
         'ActiveDirectoryToolStripMenuItem
         '
         Me.ActiveDirectoryToolStripMenuItem.Name = "ActiveDirectoryToolStripMenuItem"
-        Me.ActiveDirectoryToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.ActiveDirectoryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ActiveDirectoryToolStripMenuItem.Text = "Active Directory"
         '
         'EducationLevelToolStripMenuItem
         '
         Me.EducationLevelToolStripMenuItem.Name = "EducationLevelToolStripMenuItem"
-        Me.EducationLevelToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.EducationLevelToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EducationLevelToolStripMenuItem.Text = "Education Level"
         '
         'EmailAccountsToolStripMenuItem
         '
         Me.EmailAccountsToolStripMenuItem.Name = "EmailAccountsToolStripMenuItem"
-        Me.EmailAccountsToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.EmailAccountsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EmailAccountsToolStripMenuItem.Text = "Email Accounts"
         '
         'ListServToolStripMenuItem
         '
         Me.ListServToolStripMenuItem.Name = "ListServToolStripMenuItem"
-        Me.ListServToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.ListServToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ListServToolStripMenuItem.Text = "List Serv"
         '
         'MappedDrivesToolStripMenuItem
         '
         Me.MappedDrivesToolStripMenuItem.Name = "MappedDrivesToolStripMenuItem"
-        Me.MappedDrivesToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.MappedDrivesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MappedDrivesToolStripMenuItem.Text = "Mapped Drives"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(159, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
         '
         'DepartmentToolStripMenuItem
         '
         Me.DepartmentToolStripMenuItem.Name = "DepartmentToolStripMenuItem"
-        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DepartmentToolStripMenuItem.Text = "Department"
         '
         'TitleToolStripMenuItem
         '
         Me.TitleToolStripMenuItem.Name = "TitleToolStripMenuItem"
-        Me.TitleToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.TitleToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TitleToolStripMenuItem.Text = "Title"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(159, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'BuildingToolStripMenuItem
         '
         Me.BuildingToolStripMenuItem.Name = "BuildingToolStripMenuItem"
-        Me.BuildingToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.BuildingToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BuildingToolStripMenuItem.Text = "Building"
         '
         'OfficeToolStripMenuItem
         '
         Me.OfficeToolStripMenuItem.Name = "OfficeToolStripMenuItem"
-        Me.OfficeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.OfficeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.OfficeToolStripMenuItem.Text = "Office Number"
         '
         'OfficeSubLettersToolStripMenuItem
         '
         Me.OfficeSubLettersToolStripMenuItem.Name = "OfficeSubLettersToolStripMenuItem"
-        Me.OfficeSubLettersToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.OfficeSubLettersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.OfficeSubLettersToolStripMenuItem.Text = "Office Sub Letter"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(159, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
         '
         'HardwareTypeToolStripMenuItem
         '
         Me.HardwareTypeToolStripMenuItem.Name = "HardwareTypeToolStripMenuItem"
-        Me.HardwareTypeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.HardwareTypeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.HardwareTypeToolStripMenuItem.Text = "Hardware Type"
         '
         'ManufacturerToolStripMenuItem
         '
         Me.ManufacturerToolStripMenuItem.Name = "ManufacturerToolStripMenuItem"
-        Me.ManufacturerToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.ManufacturerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ManufacturerToolStripMenuItem.Text = "Manufacturer"
         '
         'IPAddressToolStripMenuItem
         '
         Me.IPAddressToolStripMenuItem.Name = "IPAddressToolStripMenuItem"
-        Me.IPAddressToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.IPAddressToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.IPAddressToolStripMenuItem.Text = "IP Address"
         '
         'OSTypeToolStripMenuItem
         '
         Me.OSTypeToolStripMenuItem.Name = "OSTypeToolStripMenuItem"
-        Me.OSTypeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.OSTypeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.OSTypeToolStripMenuItem.Text = "OS Type"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(159, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
         '
         'StateToolStripMenuItem
         '
         Me.StateToolStripMenuItem.Name = "StateToolStripMenuItem"
-        Me.StateToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.StateToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.StateToolStripMenuItem.Text = "State"
         '
         'PartsToolStripMenuItem
         '
         Me.PartsToolStripMenuItem.Name = "PartsToolStripMenuItem"
-        Me.PartsToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.PartsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PartsToolStripMenuItem.Text = "Parts"
         '
         'PartsCategoriesToolStripMenuItem
         '
         Me.PartsCategoriesToolStripMenuItem.Name = "PartsCategoriesToolStripMenuItem"
-        Me.PartsCategoriesToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.PartsCategoriesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PartsCategoriesToolStripMenuItem.Text = "Parts Categories"
         '
         'UserToolStripMenuItem
@@ -370,6 +371,12 @@ Partial Class frmMain
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(816, 219)
         Me.pnlMain.TabIndex = 2
+        '
+        'SoftwareTypeToolStripMenuItem
+        '
+        Me.SoftwareTypeToolStripMenuItem.Name = "SoftwareTypeToolStripMenuItem"
+        Me.SoftwareTypeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SoftwareTypeToolStripMenuItem.Text = "Software Type"
         '
         'frmMain
         '
@@ -440,4 +447,5 @@ Partial Class frmMain
     Friend WithEvents UserAdministrationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PartsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PartsCategoriesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SoftwareTypeToolStripMenuItem As ToolStripMenuItem
 End Class
