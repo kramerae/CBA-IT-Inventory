@@ -32,10 +32,6 @@ Public Class frmHardwareNew
             cmbManufacturer_Load()
             cmbOSType_Load()
 
-            If m_lngHardwareID > 0 Then
-                Hardware_Populate()
-            End If
-
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally
@@ -60,78 +56,6 @@ Public Class frmHardwareNew
 #End Region
 
 #Region "Populate/Save/Validate"
-
-    Private Sub Hardware_Populate()
-        Dim objConn As SqlConnection = Nothing
-        Dim qryTemp As SqlCommand = Nothing
-        Dim rsTemp As SqlDataReader = Nothing
-        Dim dt As DataTable = Nothing
-        Dim dr As DataRow = Nothing
-        Dim lngIndex As Integer = Nothing
-        Dim para As SqlParameter = Nothing
-        Try
-            objConn = New SqlConnection()
-            objConn.ConnectionString = g_ConnectionString
-
-            qryTemp = New SqlCommand()
-            qryTemp.Connection = objConn
-            qryTemp.CommandType = CommandType.StoredProcedure
-            qryTemp.CommandTimeout = 60
-            qryTemp.CommandText = "qryHardwareUpdate_Populate"
-
-            para = New SqlParameter()
-            para.ParameterName = "@FK_lngHardware"
-            para.SqlDbType = SqlDbType.Int
-            para.Direction = ParameterDirection.Input
-            para.Value = m_lngHardwareID
-            qryTemp.Parameters.Add(para)
-            qryTemp.Parameters.Add(CreateParameter("@lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
-
-            objConn.Open()
-
-            rsTemp = qryTemp.ExecuteReader()
-
-            While rsTemp.Read
-                m_lngHardwareID = rsTemp.Item("PK_autHardwareID")
-                txtDeviceName.Text = rsTemp.Item("txtDeviceName")
-                SetIntegerID(cmbHardwareType, rsTemp.Item("PK_autHardwareTypeID"))
-                SetIntegerID(cmbManufacturer, rsTemp.Item("PK_autManufacturerID"))
-                txtModelName.Text = rsTemp.Item("txtModelName")
-                txtModelNumber.Text = rsTemp.Item("txtModelNumber")
-                txtSerialNum.Text = rsTemp.Item("txtSerialNumber")
-                txtPurchaseDate.Text = rsTemp.Item("dtiPurchaseDate")
-                txtWarrantyExpDate.Text = rsTemp.Item("dtiWarrantyExp")
-                txtServiceTag.Text = rsTemp.Item("txtServiceTag")
-                txtExprServiceTag.Text = rsTemp.Item("txtExpressServiceTag")
-                txtBarcode.Text = rsTemp.Item("txtBarcode")
-                SetIntegerID(cmbOS, rsTemp.Item("PK_autOSTypeID"))
-                txtCPU.Text = rsTemp.Item("txtCPU")
-                txtMemory.Text = rsTemp.Item("txtMemory")
-                txtHDD.Text = rsTemp.Item("txtHDD")
-                txtResolution.Text = rsTemp.Item("txtResolution")
-                txtAspectRatio.Text = rsTemp.Item("txtAspectRatio")
-                txtMount.Text = rsTemp.Item("txtMount")
-                txtInput.Text = rsTemp.Item("txtInput")
-                txtPrinterType.Text = rsTemp.Item("txtPrinterType")
-                txtBlackInk.Text = rsTemp.Item("txtBlackInk")
-                txtColorInk.Text = rsTemp.Item("txtColorInk")
-                If rsTemp.Item("PK_autIPAddressID") > 0 Then
-                    LoadIPComboBox(cmbIPAddress, "qryCBOIPAddress_Populate", rsTemp.Item("PK_autIPAddressID"))
-                    SetIntegerID(cmbIPAddress, rsTemp.Item("PK_autIPAddressID"))
-                End If
-                m_lngEmployeeID = rsTemp.Item("PK_autEmployeeID")
-            End While
-
-
-        Catch ex As Exception
-            HandleException(Me.Name, ex)
-        Finally
-            Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
-            Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
-            Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
-        End Try
-    End Sub
-
     Private Sub Hardware_Save()
         Dim objConn As SqlConnection = Nothing
         Dim qryTemp As SqlCommand = Nothing
@@ -151,7 +75,6 @@ Public Class frmHardwareNew
             qryTemp.Connection = objConn
 
             qryTemp.Parameters.Add(CreateParameter("@FK_lngEmployee", SqlDbType.Int, ParameterDirection.Input, m_lngEmployeeID))
-            'qryTemp.Parameters.Add(CreateParameter("@FK_lngHardware", SqlDbType.Int, ParameterDirection.Input, m_lngHardwareID))
             qryTemp.Parameters.Add(CreateParameter("@lngHardwareType", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbHardwareType)))
             qryTemp.Parameters.Add(CreateParameter("@lngManufacturer", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbManufacturer)))
             qryTemp.Parameters.Add(CreateParameter("@txtServiceTag", SqlDbType.VarChar, ParameterDirection.Input, txtServiceTag.Text))
@@ -198,52 +121,7 @@ Public Class frmHardwareNew
             objConn.Open()
             rsTemp = qryTemp.ExecuteReader()
 
-            MsgBox("TEST Hardware added successfully.", MsgBoxStyle.OkOnly, "System Message")
-            While rsTemp.Read
-                m_lngHardwareID = rsTemp.Item("lngHardware")
-            End While
-            
-            If m_lngHardwareID > 0 Then
-                MsgBox("Hardware added successfully.", MsgBoxStyle.OkOnly, "System Message")
-                Hardware_Populate()
-            Else
-
-            End If
-        Catch ex As Exception
-            HandleException(Me.Name, ex)
-        Finally
-            Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
-            Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
-            Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
-        End Try
-    End Sub
-
-    Private Sub UnassignHardware_Save()
-        Dim objConn As SqlConnection = Nothing
-        Dim qryTemp As SqlCommand = Nothing
-        Dim para As SqlParameter = Nothing
-        Dim rsTemp As SqlDataReader = Nothing
-
-        Try
-            objConn = New SqlConnection()
-            objConn.ConnectionString = g_ConnectionString
-
-            qryTemp = New SqlCommand()
-            qryTemp.Connection = objConn
-            qryTemp.CommandType = CommandType.StoredProcedure
-            qryTemp.CommandTimeout = 60
-            qryTemp.CommandText = "qryAssignEquipment_Update"
-            qryTemp.Parameters.Add(CreateParameter("@lngEmployee", SqlDbType.Int, ParameterDirection.Input, m_lngEmployeeID))
-            qryTemp.Parameters.Add(CreateParameter("@lngHardware", SqlDbType.Int, ParameterDirection.Input, m_lngHardwareID))
-            qryTemp.Parameters.Add(CreateParameter("@ysnAssign", SqlDbType.Bit, ParameterDirection.Input, 0))
-            qryTemp.Parameters.Add(CreateParameter("@lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
-            qryTemp.Parameters.Add(CreateParameter("@txtHardwareName", SqlDbType.VarChar, ParameterDirection.Input, txtDeviceName.Text.Trim))
-
-            objConn.Open()
-            qryTemp.ExecuteNonQuery()
-
-            objConn.Close()
-            qryTemp.Dispose()
+            MsgBox("Hardware added successfully.", MsgBoxStyle.OkOnly, "System Message")
 
         Catch ex As Exception
             HandleException(Me.Name, ex)
@@ -251,7 +129,6 @@ Public Class frmHardwareNew
             Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
             Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
             Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
-            'Me.Dispose()
         End Try
     End Sub
 #End Region
