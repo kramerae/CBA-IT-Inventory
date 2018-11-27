@@ -128,12 +128,17 @@ Public Class frmAppDashboard
 
     Private Sub btnHardwareNew_Click(sender As Object, e As EventArgs) Handles btnHardwareNew.Click
         'Dim frmRefHardware As frmHardware2
-        Dim frmRefHardwareParts As frmHardwareParts
+        'Dim frmRefHardwareParts As frmHardwareParts
+        Dim frmRefHardwareNew As frmHardwareNew
         Try
-            frmRefHardwareParts = New frmHardwareParts()
-            frmRefHardwareParts.Name = "Test"
-            frmRefHardwareParts.Tag = "Test"
-            frmMDIChildAdd(frmRefHardwareParts)
+            frmRefHardwareNew = New frmHardwareNew()
+            frmRefHardwareNew.Name = "NewHardware"
+            frmRefHardwareNew.Tag = "New Hardware"
+            frmMDIChildAdd(frmRefHardwareNew)
+            'frmRefHardwareParts = New frmHardwareParts()
+            'frmRefHardwareParts.Name = "Test"
+            'frmRefHardwareParts.Tag = "Test"
+            'frmMDIChildAdd(frmRefHardwareParts)
             'frmRefHardware = New frmHardware2()
             'frmRefHardware.Name = "HardwareNew"
             'frmRefHardware.Tag = "Hardware - New"

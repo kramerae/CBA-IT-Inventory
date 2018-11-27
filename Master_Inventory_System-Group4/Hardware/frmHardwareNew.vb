@@ -2,7 +2,7 @@
 Imports Master_Inventory_System_Group4.frmMain
 Imports System.Data.SqlClient
 
-Public Class frmHardware2
+Public Class frmHardwareNew
 #Region "Declarations"
     Private m_lngHardwareID As Integer
     Private m_bolLoading As Boolean = False
@@ -23,7 +23,7 @@ Public Class frmHardware2
 
 #Region "Form Events"
 
-    Private Sub frmHardware2_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub frmHardwareNew_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
             m_bolLoading = True
 
@@ -36,13 +36,6 @@ Public Class frmHardware2
                 Hardware_Populate()
             End If
 
-            If txtAssigned.Text = "No" Then
-                btnUnassign.Enabled = False
-                btnAssign.Enabled = True
-            Else
-                btnUnassign.Enabled = True
-                btnAssign.Enabled = False
-            End If
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally
@@ -56,7 +49,7 @@ Public Class frmHardware2
 #End Region
 
 #Region "Button Events"
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Try
             Hardware_Save()
         Catch ex As Exception
@@ -64,34 +57,6 @@ Public Class frmHardware2
         End Try
     End Sub
 
-    Private Sub btnAssign_Click(sender As Object, e As EventArgs) Handles btnAssign.Click
-        Try
-            frmAssignEquipment.Hardware = m_lngHardwareID
-            frmAssignEquipment.Employee = m_lngEmployeeID
-            frmAssignEquipment.ShowDialog()
-            Hardware_Save()
-        Catch ex As Exception
-            HandleException(Me.Name, ex)
-        End Try
-    End Sub
-
-    Private Sub btnUnassign_Click(sender As Object, e As EventArgs) Handles btnUnassign.Click
-        Dim message As String = "Are you sure you want to unassign " + txtFirstName.Text.Trim + " " + txtLastName.Text.Trim + " from " + txtDeviceName.Text.Trim
-        Dim dlgR As DialogResult
-        dlgR = MessageBox.Show(message, "Unassign Hardware", MessageBoxButtons.YesNo)
-        Try
-            If dlgR = DialogResult.Yes Then
-                UnassignHardware_Save()
-                MsgBox("Unassigned successful.", MsgBoxStyle.Exclamation, "Validation Message")
-                btnAssign.Enabled = True
-                btnUnassign.Enabled = False
-            End If
-        Catch ex As Exception
-            HandleException(Me.Name, ex)
-        End Try
-        Hardware_Populate()
-        'Me.Close()
-    End Sub
 #End Region
 
 #Region "Populate/Save/Validate"
@@ -132,7 +97,7 @@ Public Class frmHardware2
                 SetIntegerID(cmbHardwareType, rsTemp.Item("PK_autHardwareTypeID"))
                 SetIntegerID(cmbManufacturer, rsTemp.Item("PK_autManufacturerID"))
                 txtModelName.Text = rsTemp.Item("txtModelName")
-                ''txtModelNumber.Text = rsTemp.Item("txtModelNumber")
+                txtModelNumber.Text = rsTemp.Item("txtModelNumber")
                 txtSerialNum.Text = rsTemp.Item("txtSerialNumber")
                 txtPurchaseDate.Text = rsTemp.Item("dtiPurchaseDate")
                 txtWarrantyExpDate.Text = rsTemp.Item("dtiWarrantyExp")
@@ -150,11 +115,6 @@ Public Class frmHardware2
                 txtPrinterType.Text = rsTemp.Item("txtPrinterType")
                 txtBlackInk.Text = rsTemp.Item("txtBlackInk")
                 txtColorInk.Text = rsTemp.Item("txtColorInk")
-                txtAssigned.Text = rsTemp.Item("txtAssign")
-                txtLastName.Text = rsTemp.Item("txtLastName")
-                txtFirstName.Text = rsTemp.Item("txtFirstName")
-                txtRoom.Text = rsTemp.Item("txtOffice")
-                txtDepartment.Text = rsTemp.Item("txtDepartment")
                 If rsTemp.Item("PK_autIPAddressID") > 0 Then
                     LoadIPComboBox(cmbIPAddress, "qryCBOIPAddress_Populate", rsTemp.Item("PK_autIPAddressID"))
                     SetIntegerID(cmbIPAddress, rsTemp.Item("PK_autIPAddressID"))
@@ -187,11 +147,11 @@ Public Class frmHardware2
 
             qryTemp.CommandType = CommandType.StoredProcedure
             qryTemp.CommandTimeout = 60
-            qryTemp.CommandText = "qryHardwareSave"
+            qryTemp.CommandText = "qryAddHardware"
             qryTemp.Connection = objConn
 
             qryTemp.Parameters.Add(CreateParameter("@FK_lngEmployee", SqlDbType.Int, ParameterDirection.Input, m_lngEmployeeID))
-            qryTemp.Parameters.Add(CreateParameter("@FK_lngHardware", SqlDbType.Int, ParameterDirection.Input, m_lngHardwareID))
+            'qryTemp.Parameters.Add(CreateParameter("@FK_lngHardware", SqlDbType.Int, ParameterDirection.Input, m_lngHardwareID))
             qryTemp.Parameters.Add(CreateParameter("@lngHardwareType", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbHardwareType)))
             qryTemp.Parameters.Add(CreateParameter("@lngManufacturer", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbManufacturer)))
             qryTemp.Parameters.Add(CreateParameter("@txtServiceTag", SqlDbType.VarChar, ParameterDirection.Input, txtServiceTag.Text))
@@ -200,17 +160,35 @@ Public Class frmHardware2
             qryTemp.Parameters.Add(CreateParameter("@txtModelName", SqlDbType.VarChar, ParameterDirection.Input, txtModelName.Text))
             qryTemp.Parameters.Add(CreateParameter("@txtSerialNumber", SqlDbType.VarChar, ParameterDirection.Input, txtSerialNum.Text))
             qryTemp.Parameters.Add(CreateParameter("@txtHardwareName", SqlDbType.VarChar, ParameterDirection.Input, txtDeviceName.Text))
-            qryTemp.Parameters.Add(CreateParameter("@lngIPAddress", SqlDbType.VarChar, ParameterDirection.Input, GetIntegerID(cmbIPAddress)))
+            qryTemp.Parameters.Add(CreateParameter("@txtMACAddress", SqlDbType.VarChar, ParameterDirection.Input, txtMACAddress.Text))
+            qryTemp.Parameters.Add(CreateParameter("@lngIPAddress", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbIPAddress)))
             qryTemp.Parameters.Add(CreateParameter("@txtBarcode", SqlDbType.VarChar, ParameterDirection.Input, txtBarcode.Text))
             qryTemp.Parameters.Add(CreateParameter("@lngOSType", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbOS)))
             qryTemp.Parameters.Add(CreateParameter("@lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
-            qryTemp.Parameters.Add(CreateParameter("@dtiPurchase", SqlDbType.Date, ParameterDirection.Input, txtPurchaseDate.Text))
-            qryTemp.Parameters.Add(CreateParameter("@dtiWarranty", SqlDbType.Date, ParameterDirection.Input, txtWarrantyExpDate.Text))
+            If txtPurchaseDate.Text IsNot "" Then
+                Dim dtpurchase As DateTime = CType(txtPurchaseDate.Text, Date)
+                qryTemp.Parameters.Add(CreateParameter("@dtiPurchase", SqlDbType.Date, ParameterDirection.Input, dtpurchase))
+            Else
+                qryTemp.Parameters.Add(CreateParameter("@dtiPurchase", SqlDbType.Date, ParameterDirection.Input, DBNull.Value))
+            End If
+            If txtWarrantyExpDate.Text IsNot "" Then
+                Dim dtwarranty As DateTime = CType(txtWarrantyExpDate.Text, Date)
+                qryTemp.Parameters.Add(CreateParameter("@dtiWarranty", SqlDbType.Date, ParameterDirection.Input, dtwarranty))
+            Else
+                qryTemp.Parameters.Add(CreateParameter("@dtiWarranty", SqlDbType.Date, ParameterDirection.Input, DBNull.Value))
+            End If
+            If txtCurCost.Text IsNot "" Then
+                Dim cost As Decimal
+                Decimal.TryParse(txtCurCost.Text, cost)
+                qryTemp.Parameters.Add(CreateParameter("@monCurCost", SqlDbType.Money, ParameterDirection.Input, cost))
+            Else
+                qryTemp.Parameters.Add(CreateParameter("@monCurCost", SqlDbType.Money, ParameterDirection.Input, DBNull.Value))
+            End If
             qryTemp.Parameters.Add(CreateParameter("@txtCPU", SqlDbType.VarChar, ParameterDirection.Input, txtCPU.Text))
             qryTemp.Parameters.Add(CreateParameter("@txtMemory", SqlDbType.VarChar, ParameterDirection.Input, txtMemory.Text))
             qryTemp.Parameters.Add(CreateParameter("@txtHDD", SqlDbType.VarChar, ParameterDirection.Input, txtHDD.Text))
             qryTemp.Parameters.Add(CreateParameter("@txtResolution", SqlDbType.VarChar, ParameterDirection.Input, txtResolution.Text))
-            qryTemp.Parameters.Add(CreateParameter("@txtAspectRation", SqlDbType.VarChar, ParameterDirection.Input, txtAspectRatio.Text))
+            qryTemp.Parameters.Add(CreateParameter("@txtAspectRatio", SqlDbType.VarChar, ParameterDirection.Input, txtAspectRatio.Text))
             qryTemp.Parameters.Add(CreateParameter("@txtMount", SqlDbType.VarChar, ParameterDirection.Input, txtMount.Text))
             qryTemp.Parameters.Add(CreateParameter("@txtInput", SqlDbType.VarChar, ParameterDirection.Input, txtInput.Text))
             qryTemp.Parameters.Add(CreateParameter("@txtPrinterType", SqlDbType.VarChar, ParameterDirection.Input, txtPrinterType.Text))
@@ -220,12 +198,13 @@ Public Class frmHardware2
             objConn.Open()
             rsTemp = qryTemp.ExecuteReader()
 
+            MsgBox("TEST Hardware added successfully.", MsgBoxStyle.OkOnly, "System Message")
             While rsTemp.Read
                 m_lngHardwareID = rsTemp.Item("lngHardware")
             End While
             
             If m_lngHardwareID > 0 Then
-                MsgBox("Hardware saved successfully.", MsgBoxStyle.OkOnly, "System Message")
+                MsgBox("Hardware added successfully.", MsgBoxStyle.OkOnly, "System Message")
                 Hardware_Populate()
             Else
 

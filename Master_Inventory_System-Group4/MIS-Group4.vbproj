@@ -157,6 +157,12 @@
     <Compile Include="Employee\frmEmployeeDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Hardware\frmHardwareNew.designer.vb">
+      <DependentUpon>frmHardwareNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmHardwareNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\frmEmployeeDashboard.resx">
       <DependentUpon>frmEmployeeDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmHardwareNew.resx">
+      <DependentUpon>frmHardwareNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

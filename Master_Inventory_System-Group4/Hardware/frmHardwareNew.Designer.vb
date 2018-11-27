@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmHardware2
+Partial Class frmHardwareNew
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -46,8 +46,7 @@ Partial Class frmHardware2
         Me.txtDeviceName = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtBarcode = New System.Windows.Forms.TextBox()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnAssign = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtModelName = New System.Windows.Forms.TextBox()
         Me.lblMemory = New System.Windows.Forms.Label()
@@ -75,25 +74,18 @@ Partial Class frmHardware2
         Me.lblBlack = New System.Windows.Forms.Label()
         Me.txtPrinterType = New System.Windows.Forms.TextBox()
         Me.lblType = New System.Windows.Forms.Label()
-        Me.gbxAssignment = New System.Windows.Forms.GroupBox()
-        Me.txtFirstName = New System.Windows.Forms.TextBox()
-        Me.txtLastName = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.txtRoom = New System.Windows.Forms.TextBox()
-        Me.txtDepartment = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.txtAssigned = New System.Windows.Forms.TextBox()
-        Me.btnUnassign = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtMACAddress = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtCurCost = New System.Windows.Forms.TextBox()
         Me.gbxGeneral.SuspendLayout()
         Me.gbxComputer.SuspendLayout()
         Me.gbxNetwork.SuspendLayout()
         Me.gbxMonitor.SuspendLayout()
         Me.gbxPrinter.SuspendLayout()
-        Me.gbxAssignment.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbHardwareType
@@ -102,7 +94,7 @@ Partial Class frmHardware2
         Me.cmbHardwareType.Location = New System.Drawing.Point(143, 35)
         Me.cmbHardwareType.Name = "cmbHardwareType"
         Me.cmbHardwareType.Size = New System.Drawing.Size(121, 21)
-        Me.cmbHardwareType.TabIndex = 0
+        Me.cmbHardwareType.TabIndex = 1
         '
         'lblHardwareType
         '
@@ -136,7 +128,7 @@ Partial Class frmHardware2
         Me.cmbOS.Location = New System.Drawing.Point(9, 36)
         Me.cmbOS.Name = "cmbOS"
         Me.cmbOS.Size = New System.Drawing.Size(121, 21)
-        Me.cmbOS.TabIndex = 4
+        Me.cmbOS.TabIndex = 12
         '
         'Label2
         '
@@ -152,14 +144,14 @@ Partial Class frmHardware2
         Me.txtSerialNum.Location = New System.Drawing.Point(277, 88)
         Me.txtSerialNum.Name = "txtSerialNum"
         Me.txtSerialNum.Size = New System.Drawing.Size(121, 20)
-        Me.txtSerialNum.TabIndex = 6
+        Me.txtSerialNum.TabIndex = 5
         '
         'txtServiceTag
         '
         Me.txtServiceTag.Location = New System.Drawing.Point(9, 190)
         Me.txtServiceTag.Name = "txtServiceTag"
         Me.txtServiceTag.Size = New System.Drawing.Size(121, 20)
-        Me.txtServiceTag.TabIndex = 7
+        Me.txtServiceTag.TabIndex = 9
         '
         'Label3
         '
@@ -184,14 +176,14 @@ Partial Class frmHardware2
         Me.txtModelNumber.Location = New System.Drawing.Point(143, 88)
         Me.txtModelNumber.Name = "txtModelNumber"
         Me.txtModelNumber.Size = New System.Drawing.Size(121, 20)
-        Me.txtModelNumber.TabIndex = 10
+        Me.txtModelNumber.TabIndex = 4
         '
         'txtExprServiceTag
         '
         Me.txtExprServiceTag.Location = New System.Drawing.Point(143, 190)
         Me.txtExprServiceTag.Name = "txtExprServiceTag"
         Me.txtExprServiceTag.Size = New System.Drawing.Size(119, 20)
-        Me.txtExprServiceTag.TabIndex = 11
+        Me.txtExprServiceTag.TabIndex = 10
         '
         'Label5
         '
@@ -214,7 +206,7 @@ Partial Class frmHardware2
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(140, 122)
+        Me.Label7.Location = New System.Drawing.Point(274, 122)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(100, 13)
         Me.Label7.TabIndex = 17
@@ -223,7 +215,7 @@ Partial Class frmHardware2
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 122)
+        Me.Label8.Location = New System.Drawing.Point(140, 122)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(78, 13)
         Me.Label8.TabIndex = 16
@@ -231,17 +223,17 @@ Partial Class frmHardware2
         '
         'txtWarrantyExpDate
         '
-        Me.txtWarrantyExpDate.Location = New System.Drawing.Point(143, 141)
+        Me.txtWarrantyExpDate.Location = New System.Drawing.Point(277, 141)
         Me.txtWarrantyExpDate.Name = "txtWarrantyExpDate"
         Me.txtWarrantyExpDate.Size = New System.Drawing.Size(119, 20)
-        Me.txtWarrantyExpDate.TabIndex = 15
+        Me.txtWarrantyExpDate.TabIndex = 8
         '
         'txtPurchaseDate
         '
-        Me.txtPurchaseDate.Location = New System.Drawing.Point(7, 141)
+        Me.txtPurchaseDate.Location = New System.Drawing.Point(141, 141)
         Me.txtPurchaseDate.Name = "txtPurchaseDate"
         Me.txtPurchaseDate.Size = New System.Drawing.Size(121, 20)
-        Me.txtPurchaseDate.TabIndex = 14
+        Me.txtPurchaseDate.TabIndex = 7
         '
         'Label9
         '
@@ -274,7 +266,7 @@ Partial Class frmHardware2
         Me.txtDeviceName.Location = New System.Drawing.Point(9, 36)
         Me.txtDeviceName.Name = "txtDeviceName"
         Me.txtDeviceName.Size = New System.Drawing.Size(121, 20)
-        Me.txtDeviceName.TabIndex = 20
+        Me.txtDeviceName.TabIndex = 0
         '
         'Label11
         '
@@ -290,25 +282,16 @@ Partial Class frmHardware2
         Me.txtBarcode.Location = New System.Drawing.Point(277, 190)
         Me.txtBarcode.Name = "txtBarcode"
         Me.txtBarcode.Size = New System.Drawing.Size(121, 20)
-        Me.txtBarcode.TabIndex = 22
+        Me.txtBarcode.TabIndex = 11
         '
-        'btnUpdate
+        'btnAdd
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(70, 390)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
-        Me.btnUpdate.TabIndex = 24
-        Me.btnUpdate.Text = "Update"
-        Me.btnUpdate.UseVisualStyleBackColor = True
-        '
-        'btnAssign
-        '
-        Me.btnAssign.Location = New System.Drawing.Point(173, 390)
-        Me.btnAssign.Name = "btnAssign"
-        Me.btnAssign.Size = New System.Drawing.Size(75, 23)
-        Me.btnAssign.TabIndex = 25
-        Me.btnAssign.Text = "Assign"
-        Me.btnAssign.UseVisualStyleBackColor = True
+        Me.btnAdd.Location = New System.Drawing.Point(67, 273)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd.TabIndex = 23
+        Me.btnAdd.Text = "Add Device"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'Label12
         '
@@ -324,7 +307,7 @@ Partial Class frmHardware2
         Me.txtModelName.Location = New System.Drawing.Point(9, 88)
         Me.txtModelName.Name = "txtModelName"
         Me.txtModelName.Size = New System.Drawing.Size(121, 20)
-        Me.txtModelName.TabIndex = 28
+        Me.txtModelName.TabIndex = 3
         '
         'lblMemory
         '
@@ -346,6 +329,8 @@ Partial Class frmHardware2
         '
         'gbxGeneral
         '
+        Me.gbxGeneral.Controls.Add(Me.Label13)
+        Me.gbxGeneral.Controls.Add(Me.txtMACAddress)
         Me.gbxGeneral.Controls.Add(Me.Label10)
         Me.gbxGeneral.Controls.Add(Me.cmbHardwareType)
         Me.gbxGeneral.Controls.Add(Me.lblHardwareType)
@@ -368,7 +353,7 @@ Partial Class frmHardware2
         Me.gbxGeneral.Controls.Add(Me.Label4)
         Me.gbxGeneral.Controls.Add(Me.Label6)
         Me.gbxGeneral.Controls.Add(Me.txtExprServiceTag)
-        Me.gbxGeneral.Location = New System.Drawing.Point(12, 31)
+        Me.gbxGeneral.Location = New System.Drawing.Point(12, 35)
         Me.gbxGeneral.Name = "gbxGeneral"
         Me.gbxGeneral.Size = New System.Drawing.Size(409, 223)
         Me.gbxGeneral.TabIndex = 35
@@ -385,7 +370,7 @@ Partial Class frmHardware2
         Me.gbxComputer.Controls.Add(Me.cmbOS)
         Me.gbxComputer.Controls.Add(Me.lblHDD)
         Me.gbxComputer.Controls.Add(Me.lblMemory)
-        Me.gbxComputer.Location = New System.Drawing.Point(427, 31)
+        Me.gbxComputer.Location = New System.Drawing.Point(428, 35)
         Me.gbxComputer.Name = "gbxComputer"
         Me.gbxComputer.Size = New System.Drawing.Size(142, 223)
         Me.gbxComputer.TabIndex = 36
@@ -397,21 +382,21 @@ Partial Class frmHardware2
         Me.txtHDD.Location = New System.Drawing.Point(9, 190)
         Me.txtHDD.Name = "txtHDD"
         Me.txtHDD.Size = New System.Drawing.Size(120, 20)
-        Me.txtHDD.TabIndex = 38
+        Me.txtHDD.TabIndex = 15
         '
         'txtMemory
         '
         Me.txtMemory.Location = New System.Drawing.Point(9, 141)
         Me.txtMemory.Name = "txtMemory"
         Me.txtMemory.Size = New System.Drawing.Size(120, 20)
-        Me.txtMemory.TabIndex = 37
+        Me.txtMemory.TabIndex = 14
         '
         'txtCPU
         '
         Me.txtCPU.Location = New System.Drawing.Point(9, 88)
         Me.txtCPU.Name = "txtCPU"
         Me.txtCPU.Size = New System.Drawing.Size(120, 20)
-        Me.txtCPU.TabIndex = 36
+        Me.txtCPU.TabIndex = 13
         '
         'lblCPU
         '
@@ -426,7 +411,7 @@ Partial Class frmHardware2
         '
         Me.gbxNetwork.Controls.Add(Me.Label9)
         Me.gbxNetwork.Controls.Add(Me.cmbIPAddress)
-        Me.gbxNetwork.Location = New System.Drawing.Point(872, 12)
+        Me.gbxNetwork.Location = New System.Drawing.Point(871, 35)
         Me.gbxNetwork.Name = "gbxNetwork"
         Me.gbxNetwork.Size = New System.Drawing.Size(140, 69)
         Me.gbxNetwork.TabIndex = 37
@@ -443,7 +428,7 @@ Partial Class frmHardware2
         Me.gbxMonitor.Controls.Add(Me.lblAspectRatio)
         Me.gbxMonitor.Controls.Add(Me.txtResolution)
         Me.gbxMonitor.Controls.Add(Me.lblResolution)
-        Me.gbxMonitor.Location = New System.Drawing.Point(577, 31)
+        Me.gbxMonitor.Location = New System.Drawing.Point(576, 35)
         Me.gbxMonitor.Name = "gbxMonitor"
         Me.gbxMonitor.Size = New System.Drawing.Size(144, 223)
         Me.gbxMonitor.TabIndex = 38
@@ -455,14 +440,14 @@ Partial Class frmHardware2
         Me.txtAspectRatio.Location = New System.Drawing.Point(10, 88)
         Me.txtAspectRatio.Name = "txtAspectRatio"
         Me.txtAspectRatio.Size = New System.Drawing.Size(124, 20)
-        Me.txtAspectRatio.TabIndex = 40
+        Me.txtAspectRatio.TabIndex = 17
         '
         'txtInput
         '
         Me.txtInput.Location = New System.Drawing.Point(10, 191)
         Me.txtInput.Name = "txtInput"
         Me.txtInput.Size = New System.Drawing.Size(124, 20)
-        Me.txtInput.TabIndex = 7
+        Me.txtInput.TabIndex = 19
         '
         'lblInput
         '
@@ -478,7 +463,7 @@ Partial Class frmHardware2
         Me.txtMount.Location = New System.Drawing.Point(10, 139)
         Me.txtMount.Name = "txtMount"
         Me.txtMount.Size = New System.Drawing.Size(124, 20)
-        Me.txtMount.TabIndex = 5
+        Me.txtMount.TabIndex = 18
         '
         'lblMount
         '
@@ -503,7 +488,7 @@ Partial Class frmHardware2
         Me.txtResolution.Location = New System.Drawing.Point(10, 33)
         Me.txtResolution.Name = "txtResolution"
         Me.txtResolution.Size = New System.Drawing.Size(124, 20)
-        Me.txtResolution.TabIndex = 1
+        Me.txtResolution.TabIndex = 16
         '
         'lblResolution
         '
@@ -522,7 +507,7 @@ Partial Class frmHardware2
         Me.gbxPrinter.Controls.Add(Me.lblBlack)
         Me.gbxPrinter.Controls.Add(Me.txtPrinterType)
         Me.gbxPrinter.Controls.Add(Me.lblType)
-        Me.gbxPrinter.Location = New System.Drawing.Point(727, 31)
+        Me.gbxPrinter.Location = New System.Drawing.Point(726, 35)
         Me.gbxPrinter.Name = "gbxPrinter"
         Me.gbxPrinter.Size = New System.Drawing.Size(139, 223)
         Me.gbxPrinter.TabIndex = 39
@@ -534,7 +519,7 @@ Partial Class frmHardware2
         Me.txtColorInk.Location = New System.Drawing.Point(7, 139)
         Me.txtColorInk.Name = "txtColorInk"
         Me.txtColorInk.Size = New System.Drawing.Size(126, 20)
-        Me.txtColorInk.TabIndex = 5
+        Me.txtColorInk.TabIndex = 22
         '
         'lblColorInk
         '
@@ -550,7 +535,7 @@ Partial Class frmHardware2
         Me.txtBlackInk.Location = New System.Drawing.Point(7, 88)
         Me.txtBlackInk.Name = "txtBlackInk"
         Me.txtBlackInk.Size = New System.Drawing.Size(126, 20)
-        Me.txtBlackInk.TabIndex = 3
+        Me.txtBlackInk.TabIndex = 21
         '
         'lblBlack
         '
@@ -566,7 +551,7 @@ Partial Class frmHardware2
         Me.txtPrinterType.Location = New System.Drawing.Point(7, 33)
         Me.txtPrinterType.Name = "txtPrinterType"
         Me.txtPrinterType.Size = New System.Drawing.Size(126, 20)
-        Me.txtPrinterType.TabIndex = 1
+        Me.txtPrinterType.TabIndex = 20
         '
         'lblType
         '
@@ -577,143 +562,75 @@ Partial Class frmHardware2
         Me.lblType.TabIndex = 0
         Me.lblType.Text = "Type"
         '
-        'gbxAssignment
-        '
-        Me.gbxAssignment.Controls.Add(Me.txtFirstName)
-        Me.gbxAssignment.Controls.Add(Me.txtLastName)
-        Me.gbxAssignment.Controls.Add(Me.Label13)
-        Me.gbxAssignment.Controls.Add(Me.Label14)
-        Me.gbxAssignment.Controls.Add(Me.Label16)
-        Me.gbxAssignment.Controls.Add(Me.Label17)
-        Me.gbxAssignment.Controls.Add(Me.txtRoom)
-        Me.gbxAssignment.Controls.Add(Me.txtDepartment)
-        Me.gbxAssignment.Controls.Add(Me.Label19)
-        Me.gbxAssignment.Controls.Add(Me.txtAssigned)
-        Me.gbxAssignment.Location = New System.Drawing.Point(12, 260)
-        Me.gbxAssignment.Name = "gbxAssignment"
-        Me.gbxAssignment.Size = New System.Drawing.Size(409, 117)
-        Me.gbxAssignment.TabIndex = 40
-        Me.gbxAssignment.TabStop = False
-        Me.gbxAssignment.Text = "Assignment"
-        '
-        'txtFirstName
-        '
-        Me.txtFirstName.Location = New System.Drawing.Point(277, 36)
-        Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(121, 20)
-        Me.txtFirstName.TabIndex = 30
-        '
-        'txtLastName
-        '
-        Me.txtLastName.Location = New System.Drawing.Point(143, 36)
-        Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(121, 20)
-        Me.txtLastName.TabIndex = 31
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 16)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(56, 13)
-        Me.Label13.TabIndex = 21
-        Me.Label13.Text = "Assigned?"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(140, 16)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(58, 13)
-        Me.Label14.TabIndex = 1
-        Me.Label14.Text = "Last Name"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(274, 16)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(57, 13)
-        Me.Label16.TabIndex = 3
-        Me.Label16.Text = "First Name"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(6, 64)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(35, 13)
-        Me.Label17.TabIndex = 29
-        Me.Label17.Text = "Room"
-        '
-        'txtRoom
-        '
-        Me.txtRoom.Location = New System.Drawing.Point(9, 83)
-        Me.txtRoom.Name = "txtRoom"
-        Me.txtRoom.Size = New System.Drawing.Size(121, 20)
-        Me.txtRoom.TabIndex = 28
-        '
-        'txtDepartment
-        '
-        Me.txtDepartment.Location = New System.Drawing.Point(143, 83)
-        Me.txtDepartment.Name = "txtDepartment"
-        Me.txtDepartment.Size = New System.Drawing.Size(121, 20)
-        Me.txtDepartment.TabIndex = 10
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(140, 64)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(62, 13)
-        Me.Label19.TabIndex = 12
-        Me.Label19.Text = "Department"
-        '
-        'txtAssigned
-        '
-        Me.txtAssigned.Location = New System.Drawing.Point(9, 36)
-        Me.txtAssigned.Name = "txtAssigned"
-        Me.txtAssigned.Size = New System.Drawing.Size(121, 20)
-        Me.txtAssigned.TabIndex = 20
-        '
-        'btnUnassign
-        '
-        Me.btnUnassign.Location = New System.Drawing.Point(275, 390)
-        Me.btnUnassign.Name = "btnUnassign"
-        Me.btnUnassign.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.btnUnassign.Size = New System.Drawing.Size(75, 23)
-        Me.btnUnassign.TabIndex = 41
-        Me.btnUnassign.Text = "Unassign"
-        Me.btnUnassign.UseVisualStyleBackColor = True
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(18, 9)
+        Me.Label15.Location = New System.Drawing.Point(17, 12)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(170, 18)
-        Me.Label15.TabIndex = 42
-        Me.Label15.Text = "Hardware Information"
+        Me.Label15.Size = New System.Drawing.Size(151, 18)
+        Me.Label15.TabIndex = 30
+        Me.Label15.Text = "Add New Hardware"
         '
-        'frmHardware2
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(8, 122)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(71, 13)
+        Me.Label13.TabIndex = 31
+        Me.Label13.Text = "MAC Address"
+        '
+        'txtMACAddress
+        '
+        Me.txtMACAddress.Location = New System.Drawing.Point(9, 141)
+        Me.txtMACAddress.Name = "txtMACAddress"
+        Me.txtMACAddress.Size = New System.Drawing.Size(121, 20)
+        Me.txtMACAddress.TabIndex = 6
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtCurCost)
+        Me.GroupBox1.Controls.Add(Me.Label14)
+        Me.GroupBox1.Location = New System.Drawing.Point(871, 110)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(140, 69)
+        Me.GroupBox1.TabIndex = 40
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Cost"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 19)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(65, 13)
+        Me.Label14.TabIndex = 19
+        Me.Label14.Text = "Current Cost"
+        '
+        'txtCurCost
+        '
+        Me.txtCurCost.Location = New System.Drawing.Point(6, 35)
+        Me.txtCurCost.Name = "txtCurCost"
+        Me.txtCurCost.Size = New System.Drawing.Size(126, 20)
+        Me.txtCurCost.TabIndex = 20
+        '
+        'frmHardwareNew
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Menu
-        Me.ClientSize = New System.Drawing.Size(997, 442)
+        Me.ClientSize = New System.Drawing.Size(997, 316)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.btnUnassign)
-        Me.Controls.Add(Me.gbxAssignment)
         Me.Controls.Add(Me.gbxPrinter)
         Me.Controls.Add(Me.gbxMonitor)
         Me.Controls.Add(Me.gbxNetwork)
         Me.Controls.Add(Me.gbxComputer)
         Me.Controls.Add(Me.gbxGeneral)
-        Me.Controls.Add(Me.btnAssign)
-        Me.Controls.Add(Me.btnUpdate)
-        Me.Name = "frmHardware2"
-        Me.Text = "Update"
+        Me.Controls.Add(Me.btnAdd)
+        Me.Name = "frmHardwareNew"
+        Me.Text = "New Hardware"
         Me.gbxGeneral.ResumeLayout(False)
         Me.gbxGeneral.PerformLayout()
         Me.gbxComputer.ResumeLayout(False)
@@ -724,8 +641,8 @@ Partial Class frmHardware2
         Me.gbxMonitor.PerformLayout()
         Me.gbxPrinter.ResumeLayout(False)
         Me.gbxPrinter.PerformLayout()
-        Me.gbxAssignment.ResumeLayout(False)
-        Me.gbxAssignment.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -754,8 +671,7 @@ Partial Class frmHardware2
     Friend WithEvents txtDeviceName As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents txtBarcode As System.Windows.Forms.TextBox
-    Friend WithEvents btnUpdate As System.Windows.Forms.Button
-    Friend WithEvents btnAssign As System.Windows.Forms.Button
+    Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents txtModelName As System.Windows.Forms.TextBox
     Friend WithEvents lblMemory As System.Windows.Forms.Label
@@ -783,17 +699,10 @@ Partial Class frmHardware2
     Friend WithEvents txtHDD As System.Windows.Forms.TextBox
     Friend WithEvents txtMemory As System.Windows.Forms.TextBox
     Friend WithEvents txtAspectRatio As System.Windows.Forms.TextBox
-    Friend WithEvents gbxAssignment As GroupBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents txtRoom As TextBox
-    Friend WithEvents txtDepartment As TextBox
-    Friend WithEvents Label19 As Label
-    Friend WithEvents txtAssigned As TextBox
-    Friend WithEvents txtFirstName As TextBox
-    Friend WithEvents txtLastName As TextBox
-    Friend WithEvents btnUnassign As Button
     Friend WithEvents Label15 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txtMACAddress As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents txtCurCost As TextBox
+    Friend WithEvents Label14 As Label
 End Class
