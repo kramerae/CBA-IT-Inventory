@@ -163,10 +163,10 @@ Public Class frmAppDashboard
     Private Sub btnSoftwareNew_Click(sender As Object, e As EventArgs) Handles btnSoftwareNew.Click
         Dim frmRefSoftware As frmSoftware = Nothing
         Try
-            'frmRefSoftware = New frmSoftware()
-            'frmRefSoftware.Name = "SoftwareNew"
-            'frmRefSoftware.Tag = "Software - New"
-            'frmMDIChildAdd(frmRefSoftware)
+            frmRefSoftware = New frmSoftware()
+            frmRefSoftware.Name = "SoftwareNew"
+            frmRefSoftware.Tag = "Software - New"
+            frmMDIChildAdd(frmRefSoftware)
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try

@@ -355,6 +355,12 @@
     <EmbeddedResource Include="frmHardware.resx">
       <DependentUpon>frmHardware.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Software\frmSoftware.resx">
+      <DependentUpon>frmSoftware.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Software\frmSoftwareDashboard.resx">
+      <DependentUpon>frmSoftwareDashboard.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="CBAInventoryDataSet.xsc">
