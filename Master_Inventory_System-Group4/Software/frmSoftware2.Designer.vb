@@ -34,6 +34,7 @@ Partial Class frmSoftware2
         Me.txtSoftwareName = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.lstSoftwareDevices = New System.Windows.Forms.ListBox()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.gbxGeneral.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -146,11 +147,21 @@ Partial Class frmSoftware2
         Me.lstSoftwareDevices.Size = New System.Drawing.Size(210, 225)
         Me.lstSoftwareDevices.TabIndex = 45
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(307, 45)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
+        Me.btnUpdate.TabIndex = 47
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
         'frmSoftware2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 439)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.Label28)
         Me.Controls.Add(Me.lstSoftwareDevices)
         Me.Controls.Add(Me.gbxGeneral)
@@ -176,4 +187,5 @@ Partial Class frmSoftware2
     Friend WithEvents txtSoftwareName As TextBox
     Friend WithEvents Label28 As Label
     Friend WithEvents lstSoftwareDevices As ListBox
+    Friend WithEvents btnUpdate As Button
 End Class

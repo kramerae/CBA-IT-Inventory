@@ -94,6 +94,59 @@ Public Class frmSoftware2
         End Try
     End Sub
 
+    Private Sub Software_Save()
+        Dim objConn As SqlConnection = Nothing
+        Dim qryTemp As SqlCommand = Nothing
+        Dim rsTemp As SqlDataReader = Nothing
+        Dim para As SqlParameter = Nothing
+        Dim lngAD As Integer = 0
+        Dim ysnAssign As Boolean = False
+        Try
+            objConn = New SqlConnection()
+            qryTemp = New SqlCommand()
+
+            objConn.ConnectionString = g_ConnectionString
+
+            qryTemp.CommandType = CommandType.StoredProcedure
+            qryTemp.CommandTimeout = 60
+            qryTemp.CommandText = "qrySoftwareUpdate_Save"
+            qryTemp.Connection = objConn
+
+            qryTemp.Parameters.Add(CreateParameter("@lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
+            qryTemp.Parameters.Add(CreateParameter("@PK_autSoftwareID", SqlDbType.Int, ParameterDirection.Input, m_lngSoftwareID))
+            qryTemp.Parameters.Add(CreateParameter("@txtSoftwareName", SqlDbType.VarChar, ParameterDirection.Input, txtSoftwareName.Text))
+            qryTemp.Parameters.Add(CreateParameter("@txtSoftwareVersion", SqlDbType.VarChar, ParameterDirection.Input, txtSoftwareVersion.Text))
+            qryTemp.Parameters.Add(CreateParameter("@lngSoftwareType", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbSoftwareType)))
+            If txtCost.Text IsNot "" Then
+                Dim cost As Decimal
+                Decimal.TryParse(txtCost.Text, cost)
+                qryTemp.Parameters.Add(CreateParameter("@txtCost", SqlDbType.Money, ParameterDirection.Input, cost))
+            Else
+                qryTemp.Parameters.Add(CreateParameter("@txtCost", SqlDbType.Money, ParameterDirection.Input, DBNull.Value))
+            End If
+
+            objConn.Open()
+            rsTemp = qryTemp.ExecuteReader()
+
+            While rsTemp.Read
+                m_lngSoftwareID = rsTemp.Item("lngSoftware")
+            End While
+
+            If m_lngSoftwareID > 0 Then
+                MsgBox("Software saved successfully.", MsgBoxStyle.OkOnly, "System Message")
+                Software_Populate()
+            Else
+
+            End If
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        Finally
+            Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
+            Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
+            Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
+        End Try
+    End Sub
+
     Private Sub lstSoftwareDevices_Populate()
         Dim objConn As SqlConnection = Nothing
         Dim qryTemp As SqlCommand = Nothing
@@ -140,6 +193,14 @@ Public Class frmSoftware2
     Private Sub cmbSoftwareType_Load()
         Try
             LoadComboBox(cmbSoftwareType, "qryCBOSoftwareType_Populate")
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Try
+            Software_Save()
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
