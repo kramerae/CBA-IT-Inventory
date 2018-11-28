@@ -53,6 +53,8 @@ Partial Class frmHardware2
         Me.lblMemory = New System.Windows.Forms.Label()
         Me.lblHDD = New System.Windows.Forms.Label()
         Me.gbxGeneral = New System.Windows.Forms.GroupBox()
+        Me.txtMACAddress = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.gbxComputer = New System.Windows.Forms.GroupBox()
         Me.txtHDD = New System.Windows.Forms.TextBox()
         Me.txtMemory = New System.Windows.Forms.TextBox()
@@ -88,8 +90,6 @@ Partial Class frmHardware2
         Me.txtAssigned = New System.Windows.Forms.TextBox()
         Me.btnUnassign = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.txtMACAddress = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.gbxGeneral.SuspendLayout()
         Me.gbxComputer.SuspendLayout()
         Me.gbxNetwork.SuspendLayout()
@@ -378,6 +378,22 @@ Partial Class frmHardware2
         Me.gbxGeneral.TabIndex = 35
         Me.gbxGeneral.TabStop = False
         Me.gbxGeneral.Text = "General"
+        '
+        'txtMACAddress
+        '
+        Me.txtMACAddress.Location = New System.Drawing.Point(9, 141)
+        Me.txtMACAddress.Name = "txtMACAddress"
+        Me.txtMACAddress.Size = New System.Drawing.Size(121, 20)
+        Me.txtMACAddress.TabIndex = 6
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(6, 122)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(71, 13)
+        Me.Label18.TabIndex = 31
+        Me.Label18.Text = "MAC Address"
         '
         'gbxComputer
         '
@@ -705,22 +721,6 @@ Partial Class frmHardware2
         Me.Label15.TabIndex = 42
         Me.Label15.Text = "Hardware Information"
         '
-        'txtMACAddress
-        '
-        Me.txtMACAddress.Location = New System.Drawing.Point(9, 141)
-        Me.txtMACAddress.Name = "txtMACAddress"
-        Me.txtMACAddress.Size = New System.Drawing.Size(121, 20)
-        Me.txtMACAddress.TabIndex = 6
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(6, 122)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(71, 13)
-        Me.Label18.TabIndex = 31
-        Me.Label18.Text = "MAC Address"
-        '
         'frmHardware2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -738,7 +738,7 @@ Partial Class frmHardware2
         Me.Controls.Add(Me.btnAssign)
         Me.Controls.Add(Me.btnUpdate)
         Me.Name = "frmHardware2"
-        Me.Text = "Update"
+        Me.Text = "Update Hardware"
         Me.gbxGeneral.ResumeLayout(False)
         Me.gbxGeneral.PerformLayout()
         Me.gbxComputer.ResumeLayout(False)

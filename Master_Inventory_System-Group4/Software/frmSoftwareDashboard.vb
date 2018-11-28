@@ -144,4 +144,32 @@ Public Class frmSoftwareDashboard
             HandleException(Me.Name, ex)
         End Try
     End Sub
+
+    'Private Sub grdSoftware_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdSoftware.CellContentClick
+    Private Sub grdSoftware_CellDoubleClick(sender As Object, e As EventArgs) Handles grdSoftware.CellDoubleClick
+        Dim lngSoftware As Integer = 0
+        Dim row As DataGridViewRow = Nothing
+        Try
+            If grdSoftware.Rows.Count > 0 Then
+                row = grdSoftware.SelectedRows(0)
+                lngSoftware = CInt(NZ(row.Cells("PK_autSoftwareID").Value, 0))
+                frmSoftwareOpen(lngSoftware)
+            End If
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub frmSoftwareOpen(ByVal lngSoftware As Integer)
+        Dim frmRefSoftware As frmSoftware2
+        Try
+            frmRefSoftware = New frmSoftware2()
+            frmRefSoftware.Name = "Software"
+            frmRefSoftware.Tag = "Software"
+            frmRefSoftware.Software = lngSoftware
+            frmMDIChildAdd(frmRefSoftware)
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
 End Class
