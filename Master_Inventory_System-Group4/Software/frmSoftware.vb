@@ -38,7 +38,11 @@ Public Class frmSoftware
 #Region "Button Events"
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Try
-            Software_Save()
+            If txtSoftwareName.Text Is String.Empty Then
+                MsgBox("Please enter a software name.", MsgBoxStyle.OkOnly, "System Message")
+            Else
+                Software_Save()
+            End If
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
