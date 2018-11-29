@@ -136,7 +136,6 @@ Public Class frmEmployee
     End Sub
 #End Region
 #Region "Button Events"
-
     Private Sub btnEducation_Click(sender As Object, e As EventArgs) Handles btnEducation.Click
         Try
             frmNetworkExtras.EmployeeID = m_lngEmployeeID
@@ -204,6 +203,7 @@ Public Class frmEmployee
         End Try
 
     End Sub
+
     Private Sub btnUpdateAdd_Click(sender As Object, e As EventArgs) Handles btnUpdateAdd.Click
         Try
             AddEmployee_Save()
@@ -212,6 +212,7 @@ Public Class frmEmployee
         End Try
     End Sub
 #End Region
+
 #Region "Grid"
     Private Sub grdHardware_Format()
         Try
@@ -233,7 +234,6 @@ Public Class frmEmployee
                     .Visible = False
                 End With
 
-                'Hardware Name
                 With grdHardware.Columns("txtHardwareName")
                     .HeaderText = "Hardware Name"
                     .ReadOnly = True
@@ -243,56 +243,56 @@ Public Class frmEmployee
                 With grdHardware.Columns("txtHardwareTypeName")
                     .HeaderText = "Type"
                     .ReadOnly = True
-                    .Width = 150
+                    .Width = 75
                 End With
 
-                'With grdHardware.Columns("txtManufacturerName")
-                '    .HeaderText = "Manufacturer"
-                '    .ReadOnly = True
-                '    .Width = 150
-                'End With
+                With grdHardware.Columns("txtManufacturerName")
+                    .HeaderText = "Manufacturer"
+                    .ReadOnly = True
+                    .Width = 100
+                End With
 
-                'With grdHardware.Columns("txtModelName")
-                '    .HeaderText = "Model"
-                '    .ReadOnly = True
-                '    .Width = 150
-                'End With
+                With grdHardware.Columns("txtModelName")
+                    .HeaderText = "Model"
+                    .ReadOnly = True
+                    .Width = 75
+                End With
 
-                'With grdHardware.Columns("txtModelNumber")
-                '    .HeaderText = "Model Number"
-                '    .ReadOnly = True
-                '    .Width = 150
-                'End With
+                With grdHardware.Columns("txtModelNumber")
+                    .HeaderText = "Model Number"
+                    .ReadOnly = True
+                    .Width = 75
+                End With
 
                 With grdHardware.Columns("txtSerialNumber")
                     .HeaderText = "Serial Number"
                     .ReadOnly = True
-                    .Width = 150
+                    .Width = 75
                 End With
 
-                'With grdHardware.Columns("txtServiceTag")
-                '    .HeaderText = "Service Tag"
-                '    .ReadOnly = True
-                '    .Width = 150
-                'End With
+                With grdHardware.Columns("txtServiceTag")
+                    .HeaderText = "Service Tag"
+                    .ReadOnly = True
+                    .Width = 75
+                End With
 
-                'With grdHardware.Columns("txtExpressServiceTag")
-                '    .HeaderText = "Exp. Service Tag"
-                '    .ReadOnly = True
-                '    .Width = 150
-                '    .Visible = False
-                'End With
+                With grdHardware.Columns("txtExpressServiceTag")
+                    .HeaderText = "Exp. Service Tag"
+                    .ReadOnly = True
+                    .Width = 75
+                    .Visible = True
+                End With
 
                 With grdHardware.Columns("txtIPAddress")
                     .HeaderText = "IP Address"
                     .ReadOnly = True
-                    .Width = 150
+                    .Width = 75
                 End With
 
                 With grdHardware.Columns("ysnAssign")
                     .HeaderText = "Assigned"
                     .ReadOnly = True
-                    .Width = 150
+                    .Width = 60
                     .Visible = False
                 End With
 
@@ -325,14 +325,14 @@ Public Class frmEmployee
             dt.Columns.Add("PK_autHardwareID", GetType(Integer))
             dt.Columns.Add("txtHardwareName", GetType(String))
             dt.Columns.Add("txtHardwareTypeName", GetType(String))
-            'dt.Columns.Add("txtManufacturerName", GetType(String))
-            'dt.Columns.Add("txtModelName", GetType(String))
-            'dt.Columns.Add("txtModelNumber", GetType(String))
+            dt.Columns.Add("txtManufacturerName", GetType(String))
+            dt.Columns.Add("txtModelName", GetType(String))
+            dt.Columns.Add("txtModelNumber", GetType(String))
             dt.Columns.Add("txtSerialNumber", GetType(String))
-            'dt.Columns.Add("txtServiceTag", GetType(String))
-            'dt.Columns.Add("txtExpressServiceTag", GetType(String))
-            dt.Columns.Add("ysnAssign", GetType(String))
+            dt.Columns.Add("txtServiceTag", GetType(String))
+            dt.Columns.Add("txtExpressServiceTag", GetType(String))
             dt.Columns.Add("txtIPAddress", GetType(String))
+            dt.Columns.Add("ysnAssign", GetType(String))
             While rsTemp.Read
                 dr = dt.NewRow()
                 dr("PK_autHardwareID") = rsTemp.Item("PK_autHardwareID")
@@ -340,10 +340,10 @@ Public Class frmEmployee
                 dr("txtHardwareTypeName") = rsTemp.Item("txtHardwareTypeName")
                 dr("txtManufacturerName") = rsTemp.Item("txtManufacturerName")
                 dr("txtModelName") = rsTemp.Item("txtModelName")
-                'dr("txtModelNumber") = rsTemp.Item("txtModelNumber")
+                dr("txtModelNumber") = rsTemp.Item("txtModelNumber")
                 dr("txtSerialNumber") = rsTemp.Item("txtSerialNumber")
-                'dr("txtServiceTag") = rsTemp.Item("txtServiceTag")
-                'dr("txtExpressServiceTag") = rsTemp.Item("txtExpressServiceTag")
+                dr("txtServiceTag") = rsTemp.Item("txtServiceTag")
+                dr("txtExpressServiceTag") = rsTemp.Item("txtExpressServiceTag")
                 dr("txtIPAddress") = rsTemp.Item("txtIPAddress")
                 dr("ysnAssign") = rsTemp.Item("ysnAssign")
 
@@ -422,11 +422,10 @@ Public Class frmEmployee
 
                 'need to add the work information 
             End While
-            'grdHardware_Format() ' Populate the other grid
             lbxEdcuation_Populate() : lstEmailAcc_Populate()
             lbxTitle_Populate() : lstMappedDrives_Populate()
             lstADGroups_Populate() : lstListServs_Populate()
-            'grdHardware_Format()
+            grdHardware_Format()
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally
