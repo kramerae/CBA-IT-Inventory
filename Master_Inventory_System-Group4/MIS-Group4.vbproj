@@ -275,6 +275,12 @@
     <Compile Include="frmHardware.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Software\frmAssignSoftware.designer.vb">
+      <DependentUpon>frmAssignSoftware.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Software\frmAssignSoftware.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Software\frmSoftware.Designer.vb">
       <DependentUpon>frmSoftware.vb</DependentUpon>
     </Compile>
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHardware.resx">
       <DependentUpon>frmHardware.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Software\frmAssignSoftware.resx">
+      <DependentUpon>frmAssignSoftware.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Software\frmSoftware.resx">
       <DependentUpon>frmSoftware.vb</DependentUpon>

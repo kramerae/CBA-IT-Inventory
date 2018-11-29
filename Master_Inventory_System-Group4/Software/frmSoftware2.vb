@@ -206,5 +206,16 @@ Public Class frmSoftware2
         End Try
     End Sub
 
+    Private Sub btnAssign_Click(sender As Object, e As EventArgs) Handles btnAssign.Click
+        Try
+            frmAssignSoftware.Software = m_lngSoftwareID
+            frmAssignSoftware.Employee = m_lngEmployeeID
+            frmAssignSoftware.ShowDialog()
+            Software_Save()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
 #End Region
 End Class
