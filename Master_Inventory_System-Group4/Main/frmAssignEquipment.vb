@@ -30,17 +30,11 @@ Public Class frmAssignEquipment
     Private Sub frmAssignEquipment_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
             LoadComboBox(cmbEmployee, "qryCBOAssignEmployee_Populate")
-            'LoadComboBox(cmbHardware, "qryCBOAssignHardware_Populate")
 
             If m_lngEmployeeID > 0 Then
                 SetIntegerID(cmbEmployee, m_lngEmployeeID)
             End If
 
-            'grdHardware_Format()
-            'grdHardware_Populate()
-            'If m_lngHardwareID > 0 Then
-            '    SetIntegerID(cmbHardware, m_lngHardwareID)
-            'End If
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
@@ -48,7 +42,6 @@ Public Class frmAssignEquipment
 
     Private Sub frmAssignEquipment_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         Try
-            Me.Width = 900
             lblEmployee.Top = 5
             lblEmployee.Left = 5
 
@@ -161,7 +154,19 @@ Public Class frmAssignEquipment
                     .Width = 150
                 End With
 
+                With grdHardware.Columns("txtManufacturerName")
+                    .HeaderText = "Type"
+                    .ReadOnly = True
+                    .Width = 150
+                End With
+
                 With grdHardware.Columns("txtModelName")
+                    .HeaderText = "Model"
+                    .ReadOnly = True
+                    .Width = 150
+                End With
+
+                With grdHardware.Columns("txtModelNumber")
                     .HeaderText = "Model"
                     .ReadOnly = True
                     .Width = 150
@@ -178,22 +183,13 @@ Public Class frmAssignEquipment
                     .HeaderText = "Service Tag"
                     .ReadOnly = True
                     .Width = 150
-
                 End With
 
-                'Dim cmbTemplate As New ComboBox()
-                'LoadComboBox(cmbTemplate, "qryCBOIPAddress_Load")
-
-                'colCombo = New DataGridViewComboBoxColumn()
-                'celCombo = New DataGridViewComboBoxCell()
-                'colCombo.Visible = True
-                'colCombo.Width = 150
-                'colCombo.HeaderText = "IP Address"
-                'colCombo.Name = "IPAddress"
-                'LoadDataGridViewComboBoxColumn(colCombo, "qryCBOIPAddress_Load")
-                'grdHardware.Columns.Add(colCombo)
-
-
+                With grdHardware.Columns("txtExpressServiceTag")
+                    .HeaderText = "Exp Service Tag"
+                    .ReadOnly = True
+                    .Width = 150
+                End With
 
             End If
 
@@ -211,7 +207,6 @@ Public Class frmAssignEquipment
 
         Try
             'grdHardware.Rows.Clear()
-
 
             dt = New DataTable()
             objConn = New SqlConnection()
@@ -231,20 +226,26 @@ Public Class frmAssignEquipment
             dt.Columns.Add("PK_autHardwareID", GetType(Integer))
             dt.Columns.Add("ysnAssign", GetType(Boolean))
             dt.Columns.Add("txtHardwareTypeName", GetType(String))
+            dt.Columns.Add("txtHardwareName", GetType(String))
+            dt.Columns.Add("txtManufacturerName", GetType(String))
             dt.Columns.Add("txtModelName", GetType(String))
+            dt.Columns.Add("txtModelNumber", GetType(String))
             dt.Columns.Add("txtSerialNumber", GetType(String))
             dt.Columns.Add("txtServiceTag", GetType(String))
-            dt.Columns.Add("txtHardwareName", GetType(String))
+            dt.Columns.Add("txtExpressServiceTag", GetType(String))
+
 
             While rsTemp.Read()
                 dr = dt.NewRow()
                 dr("PK_autHardwareID") = rsTemp.Item("PK_autHardwareID")
                 dr("ysnAssign") = rsTemp.Item("ysnAssign")
                 dr("txtHardwareTypeName") = rsTemp.Item("txtHardwareTypeName")
+                dr("txtHardwareName") = rsTemp.Item("txtHardwareName")
                 dr("txtModelName") = rsTemp.Item("txtModelName")
+                dr("txtModelNumber") = rsTemp.Item("txtModelNumber")
                 dr("txtSerialNumber") = rsTemp.Item("txtSerialNumber")
                 dr("txtServiceTag") = rsTemp.Item("txtServiceTag")
-                dr("txtHardwareName") = rsTemp.Item("txtHardwareName")
+                dr("txtExpressServiceTag") = rsTemp.Item("txtExpressServiceTag")
                 dt.Rows.Add(dr)
             End While
             grdHardware.DataSource = dt

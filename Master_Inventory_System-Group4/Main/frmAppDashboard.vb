@@ -27,7 +27,7 @@ Public Class frmAppDashboard
             pnlGrpEmployee.Top = Me.Top + 5
             pnlGrpEmployee.Left = Me.Left + 3
             pnlGrpEmployee.Height = Me.Height - 10
-            pnlGrpEmployee.Width = (Me.Width - 20) / 3
+            pnlGrpEmployee.Width = (Me.Width - 20) / 4
             pnlLabelEmployee.Left = 0
             pnlLabelEmployee.Top = 0
             pnlLabelEmployee.Width = pnlGrpEmployee.Width
@@ -58,7 +58,8 @@ Public Class frmAppDashboard
             btnHardwareDashboard.Left = (pnlGrpHardware.Width / 2) - (btnHardwareDashboard.Width / 2)
             btnHardwareNew.Top = btnHardwareDashboard.Bottom + 10
             btnHardwareNew.Left = btnHardwareDashboard.Left
-
+            btnHardwareAssign.Top = btnHardwareNew.Bottom + 10
+            btnHardwareAssign.Left = btnHardwareNew.Left
 
             pnlGrpSoftware.Top = Me.Top + 5
             'pnlGrpSoftware.Left = (Me.Width - pnlGrpSoftware.Width - 20)
@@ -78,6 +79,18 @@ Public Class frmAppDashboard
             btnSoftwareNew.Top = btnSoftwareDashboard.Bottom + 10
             btnSoftwareNew.Left = btnSoftwareDashboard.Left
 
+            pnlGrpReports.Top = Me.Top + 5
+            'pnlGrpSoftware.Left = (Me.Width - pnlGrpSoftware.Width - 20)
+            pnlGrpReports.Left = pnlGrpSoftware.Right + 1
+            pnlGrpReports.Height = Me.Height - 10
+            pnlGrpReports.Width = pnlGrpEmployee.Width
+            pnlLabelReports.Left = 0
+            pnlLabelReports.Top = 0
+            pnlLabelReports.Width = pnlGrpReports.Width
+            pnlLabelReports.Height = pnlLabelEmployee.Height
+
+            lblReports.Top = (pnlLabelReports.Height / 2) - (lblReports.Height / 2)
+            lblReports.Left = (pnlLabelReports.Width / 2) - (lblReports.Width / 2)
 
         Catch ex As Exception
             HandleException(Me.Name, ex)
@@ -148,6 +161,18 @@ Public Class frmAppDashboard
         End Try
     End Sub
 
+    Private Sub btnHardwareAssign_Click(sender As Object, e As EventArgs) Handles btnHardwareAssign.Click
+        Dim frmRefHardwareAssign As frmAssignEquipment
+        Try
+            frmRefHardwareAssign = New frmAssignEquipment()
+            frmRefHardwareAssign.Name = "Assign"
+            frmRefHardwareAssign.Tag = "Assign Hardware"
+            frmMDIChildAdd(frmRefHardwareAssign)
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
     Private Sub btnSoftwareDashboard_Click(sender As Object, e As EventArgs) Handles btnSoftwareDashboard.Click
         Dim frmRefSoftwareDashboard As frmSoftwareDashboard
         Try
@@ -171,6 +196,8 @@ Public Class frmAppDashboard
             HandleException(Me.Name, ex)
         End Try
     End Sub
+
+
 #End Region
 
 End Class

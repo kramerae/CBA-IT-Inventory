@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmAppDashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmAppDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnEmployeeNew = New System.Windows.Forms.Button()
         Me.pnlLabelEmployee = New System.Windows.Forms.Panel()
@@ -28,8 +28,8 @@ Partial Class frmAppDashboard
         Me.pnlGrpEmployee = New System.Windows.Forms.Panel()
         Me.btnEmployeeDashboard = New System.Windows.Forms.Button()
         Me.pnlGrpHardware = New System.Windows.Forms.Panel()
-        Me.btnHardwareNew = New System.Windows.Forms.Button()
         Me.btnHardwareDashboard = New System.Windows.Forms.Button()
+        Me.btnHardwareNew = New System.Windows.Forms.Button()
         Me.pnlLabelHardware = New System.Windows.Forms.Panel()
         Me.lblHardware = New System.Windows.Forms.Label()
         Me.pnlGrpSoftware = New System.Windows.Forms.Panel()
@@ -37,12 +37,18 @@ Partial Class frmAppDashboard
         Me.btnSoftwareDashboard = New System.Windows.Forms.Button()
         Me.pnlLabelSoftware = New System.Windows.Forms.Panel()
         Me.lblSoftware = New System.Windows.Forms.Label()
+        Me.btnHardwareAssign = New System.Windows.Forms.Button()
+        Me.pnlLabelReports = New System.Windows.Forms.Panel()
+        Me.lblReports = New System.Windows.Forms.Label()
+        Me.pnlGrpReports = New System.Windows.Forms.Panel()
         Me.pnlLabelEmployee.SuspendLayout()
         Me.pnlGrpEmployee.SuspendLayout()
         Me.pnlGrpHardware.SuspendLayout()
         Me.pnlLabelHardware.SuspendLayout()
         Me.pnlGrpSoftware.SuspendLayout()
         Me.pnlLabelSoftware.SuspendLayout()
+        Me.pnlLabelReports.SuspendLayout()
+        Me.pnlGrpReports.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnEmployeeNew
@@ -82,7 +88,7 @@ Partial Class frmAppDashboard
         Me.pnlGrpEmployee.Controls.Add(Me.btnEmployeeNew)
         Me.pnlGrpEmployee.Location = New System.Drawing.Point(12, 12)
         Me.pnlGrpEmployee.Name = "pnlGrpEmployee"
-        Me.pnlGrpEmployee.Size = New System.Drawing.Size(206, 237)
+        Me.pnlGrpEmployee.Size = New System.Drawing.Size(206, 323)
         Me.pnlGrpEmployee.TabIndex = 2
         '
         'btnEmployeeDashboard
@@ -98,23 +104,14 @@ Partial Class frmAppDashboard
         'pnlGrpHardware
         '
         Me.pnlGrpHardware.BackColor = System.Drawing.Color.LightSlateGray
+        Me.pnlGrpHardware.Controls.Add(Me.btnHardwareAssign)
         Me.pnlGrpHardware.Controls.Add(Me.btnHardwareDashboard)
         Me.pnlGrpHardware.Controls.Add(Me.btnHardwareNew)
         Me.pnlGrpHardware.Controls.Add(Me.pnlLabelHardware)
-        Me.pnlGrpHardware.Location = New System.Drawing.Point(283, 12)
+        Me.pnlGrpHardware.Location = New System.Drawing.Point(224, 12)
         Me.pnlGrpHardware.Name = "pnlGrpHardware"
-        Me.pnlGrpHardware.Size = New System.Drawing.Size(200, 237)
+        Me.pnlGrpHardware.Size = New System.Drawing.Size(200, 323)
         Me.pnlGrpHardware.TabIndex = 3
-        '
-        'btnHardwareNew
-        '
-        Me.btnHardwareNew.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHardwareNew.Location = New System.Drawing.Point(10, 144)
-        Me.btnHardwareNew.Name = "btnHardwareNew"
-        Me.btnHardwareNew.Size = New System.Drawing.Size(178, 80)
-        Me.btnHardwareNew.TabIndex = 2
-        Me.btnHardwareNew.Text = "New Hardware"
-        Me.btnHardwareNew.UseVisualStyleBackColor = True
         '
         'btnHardwareDashboard
         '
@@ -125,6 +122,16 @@ Partial Class frmAppDashboard
         Me.btnHardwareDashboard.TabIndex = 1
         Me.btnHardwareDashboard.Text = "Hardware Dashboard"
         Me.btnHardwareDashboard.UseVisualStyleBackColor = True
+        '
+        'btnHardwareNew
+        '
+        Me.btnHardwareNew.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHardwareNew.Location = New System.Drawing.Point(10, 144)
+        Me.btnHardwareNew.Name = "btnHardwareNew"
+        Me.btnHardwareNew.Size = New System.Drawing.Size(178, 80)
+        Me.btnHardwareNew.TabIndex = 2
+        Me.btnHardwareNew.Text = "New Hardware"
+        Me.btnHardwareNew.UseVisualStyleBackColor = True
         '
         'pnlLabelHardware
         '
@@ -151,9 +158,9 @@ Partial Class frmAppDashboard
         Me.pnlGrpSoftware.Controls.Add(Me.btnSoftwareNew)
         Me.pnlGrpSoftware.Controls.Add(Me.btnSoftwareDashboard)
         Me.pnlGrpSoftware.Controls.Add(Me.pnlLabelSoftware)
-        Me.pnlGrpSoftware.Location = New System.Drawing.Point(524, 15)
+        Me.pnlGrpSoftware.Location = New System.Drawing.Point(430, 12)
         Me.pnlGrpSoftware.Name = "pnlGrpSoftware"
-        Me.pnlGrpSoftware.Size = New System.Drawing.Size(200, 234)
+        Me.pnlGrpSoftware.Size = New System.Drawing.Size(200, 320)
         Me.pnlGrpSoftware.TabIndex = 4
         '
         'btnSoftwareNew
@@ -195,11 +202,50 @@ Partial Class frmAppDashboard
         Me.lblSoftware.TabIndex = 0
         Me.lblSoftware.Text = "Software"
         '
+        'btnHardwareAssign
+        '
+        Me.btnHardwareAssign.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHardwareAssign.Location = New System.Drawing.Point(10, 230)
+        Me.btnHardwareAssign.Name = "btnHardwareAssign"
+        Me.btnHardwareAssign.Size = New System.Drawing.Size(178, 80)
+        Me.btnHardwareAssign.TabIndex = 3
+        Me.btnHardwareAssign.Text = "Assign Hardware"
+        Me.btnHardwareAssign.UseVisualStyleBackColor = True
+        '
+        'pnlLabelReports
+        '
+        Me.pnlLabelReports.BackColor = System.Drawing.Color.LightSlateGray
+        Me.pnlLabelReports.Controls.Add(Me.lblReports)
+        Me.pnlLabelReports.Location = New System.Drawing.Point(4, 3)
+        Me.pnlLabelReports.Name = "pnlLabelReports"
+        Me.pnlLabelReports.Size = New System.Drawing.Size(193, 45)
+        Me.pnlLabelReports.TabIndex = 0
+        '
+        'lblReports
+        '
+        Me.lblReports.AutoSize = True
+        Me.lblReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReports.Location = New System.Drawing.Point(42, 11)
+        Me.lblReports.Name = "lblReports"
+        Me.lblReports.Size = New System.Drawing.Size(82, 24)
+        Me.lblReports.TabIndex = 0
+        Me.lblReports.Text = "Reports"
+        '
+        'pnlGrpReports
+        '
+        Me.pnlGrpReports.BackColor = System.Drawing.Color.LightSlateGray
+        Me.pnlGrpReports.Controls.Add(Me.pnlLabelReports)
+        Me.pnlGrpReports.Location = New System.Drawing.Point(636, 12)
+        Me.pnlGrpReports.Name = "pnlGrpReports"
+        Me.pnlGrpReports.Size = New System.Drawing.Size(200, 323)
+        Me.pnlGrpReports.TabIndex = 4
+        '
         'frmAppDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(817, 261)
+        Me.ClientSize = New System.Drawing.Size(817, 347)
+        Me.Controls.Add(Me.pnlGrpReports)
         Me.Controls.Add(Me.pnlGrpSoftware)
         Me.Controls.Add(Me.pnlGrpHardware)
         Me.Controls.Add(Me.pnlGrpEmployee)
@@ -214,6 +260,9 @@ Partial Class frmAppDashboard
         Me.pnlGrpSoftware.ResumeLayout(False)
         Me.pnlLabelSoftware.ResumeLayout(False)
         Me.pnlLabelSoftware.PerformLayout()
+        Me.pnlLabelReports.ResumeLayout(False)
+        Me.pnlLabelReports.PerformLayout()
+        Me.pnlGrpReports.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -232,4 +281,8 @@ Partial Class frmAppDashboard
     Friend WithEvents btnSoftwareDashboard As System.Windows.Forms.Button
     Friend WithEvents pnlLabelSoftware As System.Windows.Forms.Panel
     Friend WithEvents lblSoftware As System.Windows.Forms.Label
+    Friend WithEvents btnHardwareAssign As Button
+    Friend WithEvents pnlLabelReports As Panel
+    Friend WithEvents lblReports As Label
+    Friend WithEvents pnlGrpReports As Panel
 End Class
