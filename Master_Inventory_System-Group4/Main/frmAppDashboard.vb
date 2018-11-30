@@ -92,6 +92,9 @@ Public Class frmAppDashboard
             lblReports.Top = (pnlLabelReports.Height / 2) - (lblReports.Height / 2)
             lblReports.Left = (pnlLabelReports.Width / 2) - (lblReports.Width / 2)
 
+            btnUnassignedReport.Top = pnlLabelReports.Bottom + 10
+            btnUnassignedReport.Left = (pnlGrpReports.Width / 2) - (btnUnassignedReport.Width / 2)
+
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
@@ -192,6 +195,30 @@ Public Class frmAppDashboard
             frmRefSoftware.Name = "SoftwareNew"
             frmRefSoftware.Tag = "Software - New"
             frmMDIChildAdd(frmRefSoftware)
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim frmRefReport As Form1 = Nothing
+        Try
+            frmRefReport = New Form1()
+            frmRefReport.Name = "TestReport"
+            frmRefReport.Tag = "Test Report"
+            frmMDIChildAdd(frmRefReport)
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnUnassignedReport_Click(sender As Object, e As EventArgs) Handles btnUnassignedReport.Click
+        Dim frmRefReport As frmUnassignedDevices = Nothing
+        Try
+            frmRefReport = New frmUnassignedDevices()
+            frmRefReport.Name = "UnassignedReport"
+            frmRefReport.Tag = "Unassigned Report"
+            frmMDIChildAdd(frmRefReport)
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
