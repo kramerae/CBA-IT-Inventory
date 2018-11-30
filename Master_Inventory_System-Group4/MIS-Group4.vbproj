@@ -157,6 +157,12 @@
     <Compile Include="Employee\frmEmployeeDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Hardware\frmHardware2Assign.designer.vb">
+      <DependentUpon>frmHardware2Assign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmHardware2Assign.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Hardware\frmHardwareNew.designer.vb">
       <DependentUpon>frmHardwareNew.vb</DependentUpon>
     </Compile>
@@ -223,10 +229,10 @@
     <Compile Include="Main\frmAppDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main\frmAssignEquipment.Designer.vb">
+    <Compile Include="Hardware\frmAssignEquipment.Designer.vb">
       <DependentUpon>frmAssignEquipment.vb</DependentUpon>
     </Compile>
-    <Compile Include="Main\frmAssignEquipment.vb">
+    <Compile Include="Hardware\frmAssignEquipment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\frmMain.Designer.vb">
@@ -310,6 +316,9 @@
     <EmbeddedResource Include="Employee\frmEmployeeDashboard.resx">
       <DependentUpon>frmEmployeeDashboard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmHardware2Assign.resx">
+      <DependentUpon>frmHardware2Assign.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hardware\frmHardwareNew.resx">
       <DependentUpon>frmHardwareNew.vb</DependentUpon>
     </EmbeddedResource>
@@ -343,7 +352,7 @@
     <EmbeddedResource Include="Main\frmAppDashboard.resx">
       <DependentUpon>frmAppDashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\frmAssignEquipment.resx">
+    <EmbeddedResource Include="Hardware\frmAssignEquipment.resx">
       <DependentUpon>frmAssignEquipment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\frmMain.resx">

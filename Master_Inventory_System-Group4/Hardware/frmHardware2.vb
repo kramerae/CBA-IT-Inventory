@@ -66,9 +66,10 @@ Public Class frmHardware2
 
     Private Sub btnAssign_Click(sender As Object, e As EventArgs) Handles btnAssign.Click
         Try
-            frmAssignEquipment.Hardware = m_lngHardwareID
-            frmAssignEquipment.Employee = m_lngEmployeeID
-            frmAssignEquipment.ShowDialog()
+            frmHardware2Assign.Hardware = m_lngHardwareID
+            frmHardware2Assign.Employee = m_lngEmployeeID
+            frmHardware2Assign.ShowDialog()
+
             Hardware_Save()
         Catch ex As Exception
             HandleException(Me.Name, ex)
@@ -225,9 +226,8 @@ Public Class frmHardware2
             While rsTemp.Read
                 m_lngHardwareID = rsTemp.Item("lngHardware")
             End While
-            
+
             If m_lngHardwareID > 0 Then
-                MsgBox("Hardware saved successfully.", MsgBoxStyle.OkOnly, "System Message")
                 Hardware_Populate()
             Else
 
@@ -309,12 +309,6 @@ Public Class frmHardware2
         End Try
     End Sub
 
-
-
 #End Region
-
-
-
-
 
 End Class

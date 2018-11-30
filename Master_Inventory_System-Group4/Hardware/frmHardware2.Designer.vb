@@ -372,7 +372,7 @@ Partial Class frmHardware2
         Me.gbxGeneral.Controls.Add(Me.Label4)
         Me.gbxGeneral.Controls.Add(Me.Label6)
         Me.gbxGeneral.Controls.Add(Me.txtExprServiceTag)
-        Me.gbxGeneral.Location = New System.Drawing.Point(12, 31)
+        Me.gbxGeneral.Location = New System.Drawing.Point(21, 31)
         Me.gbxGeneral.Name = "gbxGeneral"
         Me.gbxGeneral.Size = New System.Drawing.Size(409, 223)
         Me.gbxGeneral.TabIndex = 35
