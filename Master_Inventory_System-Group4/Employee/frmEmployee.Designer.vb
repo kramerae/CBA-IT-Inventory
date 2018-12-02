@@ -54,15 +54,12 @@ Partial Class frmEmployee
         Me.Label51 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.cboDepartment = New System.Windows.Forms.ComboBox()
+        Me.cmbDepartment = New System.Windows.Forms.ComboBox()
         Me.txtOfficePhoneNum = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.gbxAcademics = New System.Windows.Forms.GroupBox()
-        Me.btnTitle = New System.Windows.Forms.Button()
         Me.btnEducation = New System.Windows.Forms.Button()
-        Me.lblTitle = New System.Windows.Forms.Label()
-        Me.lstTitle = New System.Windows.Forms.ListBox()
         Me.lblEducation = New System.Windows.Forms.Label()
         Me.lstEducation = New System.Windows.Forms.ListBox()
         Me.gbxPersonal = New System.Windows.Forms.GroupBox()
@@ -100,6 +97,9 @@ Partial Class frmEmployee
         Me.btnNewStaffCancel = New System.Windows.Forms.Button()
         Me.grdHardware = New System.Windows.Forms.DataGridView()
         Me.lblHardware = New System.Windows.Forms.Label()
+        Me.btnEmpReport = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmbTitle = New System.Windows.Forms.ComboBox()
         Me.gbxAccountInfo.SuspendLayout()
         Me.gbxWork.SuspendLayout()
         Me.gbxAcademics.SuspendLayout()
@@ -133,9 +133,9 @@ Partial Class frmEmployee
         '
         'txtEid
         '
-        Me.txtEid.Location = New System.Drawing.Point(78, 47)
+        Me.txtEid.Location = New System.Drawing.Point(82, 47)
         Me.txtEid.Name = "txtEid"
-        Me.txtEid.Size = New System.Drawing.Size(125, 20)
+        Me.txtEid.Size = New System.Drawing.Size(136, 20)
         Me.txtEid.TabIndex = 3
         '
         'Label14
@@ -150,9 +150,9 @@ Partial Class frmEmployee
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(284, 47)
+        Me.txtEmail.Location = New System.Drawing.Point(320, 47)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(125, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(137, 20)
         Me.txtEmail.TabIndex = 53
         Me.txtEmail.TabStop = False
         '
@@ -160,7 +160,7 @@ Partial Class frmEmployee
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(241, 48)
+        Me.Label13.Location = New System.Drawing.Point(273, 48)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(45, 16)
         Me.Label13.TabIndex = 53
@@ -169,9 +169,9 @@ Partial Class frmEmployee
         'txtDate
         '
         Me.txtDate.Enabled = False
-        Me.txtDate.Location = New System.Drawing.Point(283, 73)
+        Me.txtDate.Location = New System.Drawing.Point(320, 73)
         Me.txtDate.Name = "txtDate"
-        Me.txtDate.Size = New System.Drawing.Size(125, 20)
+        Me.txtDate.Size = New System.Drawing.Size(137, 20)
         Me.txtDate.TabIndex = 52
         Me.txtDate.TabStop = False
         '
@@ -179,7 +179,7 @@ Partial Class frmEmployee
         '
         Me.lbldate.AutoSize = True
         Me.lbldate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbldate.Location = New System.Drawing.Point(184, 74)
+        Me.lbldate.Location = New System.Drawing.Point(216, 74)
         Me.lbldate.Name = "lbldate"
         Me.lbldate.Size = New System.Drawing.Size(95, 16)
         Me.lbldate.TabIndex = 51
@@ -187,16 +187,16 @@ Partial Class frmEmployee
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(283, 19)
+        Me.txtLastName.Location = New System.Drawing.Point(319, 19)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(125, 20)
+        Me.txtLastName.Size = New System.Drawing.Size(137, 20)
         Me.txtLastName.TabIndex = 2
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(212, 20)
+        Me.Label11.Location = New System.Drawing.Point(244, 20)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(76, 16)
         Me.Label11.TabIndex = 49
@@ -204,9 +204,9 @@ Partial Class frmEmployee
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(79, 19)
+        Me.txtFirstName.Location = New System.Drawing.Point(82, 19)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(125, 20)
+        Me.txtFirstName.Size = New System.Drawing.Size(136, 20)
         Me.txtFirstName.TabIndex = 1
         '
         'Label10
@@ -223,6 +223,8 @@ Partial Class frmEmployee
         '
         Me.gbxWork.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.gbxWork.BackColor = System.Drawing.SystemColors.Menu
+        Me.gbxWork.Controls.Add(Me.Label1)
+        Me.gbxWork.Controls.Add(Me.cmbTitle)
         Me.gbxWork.Controls.Add(Me.lblFloor)
         Me.gbxWork.Controls.Add(Me.lblLevel)
         Me.gbxWork.Controls.Add(Me.Label32)
@@ -242,7 +244,7 @@ Partial Class frmEmployee
         Me.gbxWork.Controls.Add(Me.Label51)
         Me.gbxWork.Controls.Add(Me.Label15)
         Me.gbxWork.Controls.Add(Me.Label25)
-        Me.gbxWork.Controls.Add(Me.cboDepartment)
+        Me.gbxWork.Controls.Add(Me.cmbDepartment)
         Me.gbxWork.Controls.Add(Me.txtOfficePhoneNum)
         Me.gbxWork.Controls.Add(Me.Label26)
         Me.gbxWork.Controls.Add(Me.Label27)
@@ -297,9 +299,9 @@ Partial Class frmEmployee
         'txtOutCallerID
         '
         Me.txtOutCallerID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOutCallerID.Location = New System.Drawing.Point(165, 67)
+        Me.txtOutCallerID.Location = New System.Drawing.Point(189, 90)
         Me.txtOutCallerID.Name = "txtOutCallerID"
-        Me.txtOutCallerID.Size = New System.Drawing.Size(149, 20)
+        Me.txtOutCallerID.Size = New System.Drawing.Size(97, 20)
         Me.txtOutCallerID.TabIndex = 24
         '
         'chkStaffRoster
@@ -317,7 +319,7 @@ Partial Class frmEmployee
         '
         Me.lblOutCallerID.AutoSize = True
         Me.lblOutCallerID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutCallerID.Location = New System.Drawing.Point(89, 70)
+        Me.lblOutCallerID.Location = New System.Drawing.Point(106, 92)
         Me.lblOutCallerID.Name = "lblOutCallerID"
         Me.lblOutCallerID.Size = New System.Drawing.Size(79, 15)
         Me.lblOutCallerID.TabIndex = 78
@@ -327,7 +329,7 @@ Partial Class frmEmployee
         '
         Me.lblLDCode.AutoSize = True
         Me.lblLDCode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLDCode.Location = New System.Drawing.Point(111, 120)
+        Me.lblLDCode.Location = New System.Drawing.Point(180, 120)
         Me.lblLDCode.Name = "lblLDCode"
         Me.lblLDCode.Size = New System.Drawing.Size(97, 15)
         Me.lblLDCode.TabIndex = 77
@@ -337,9 +339,9 @@ Partial Class frmEmployee
         '
         Me.txtLongDistCode.Enabled = False
         Me.txtLongDistCode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLongDistCode.Location = New System.Drawing.Point(214, 117)
+        Me.txtLongDistCode.Location = New System.Drawing.Point(280, 117)
         Me.txtLongDistCode.Name = "txtLongDistCode"
-        Me.txtLongDistCode.Size = New System.Drawing.Size(100, 20)
+        Me.txtLongDistCode.Size = New System.Drawing.Size(63, 20)
         Me.txtLongDistCode.TabIndex = 26
         '
         'chkLongDist
@@ -347,11 +349,11 @@ Partial Class frmEmployee
         Me.chkLongDist.AutoSize = True
         Me.chkLongDist.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chkLongDist.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkLongDist.Location = New System.Drawing.Point(3, 119)
+        Me.chkLongDist.Location = New System.Drawing.Point(6, 119)
         Me.chkLongDist.Name = "chkLongDist"
-        Me.chkLongDist.Size = New System.Drawing.Size(84, 19)
+        Me.chkLongDist.Size = New System.Drawing.Size(81, 19)
         Me.chkLongDist.TabIndex = 26
-        Me.chkLongDist.Text = "Long Dist.:"
+        Me.chkLongDist.Text = "LongDist.:"
         Me.chkLongDist.UseVisualStyleBackColor = True
         '
         'chkVoiceMail
@@ -359,11 +361,11 @@ Partial Class frmEmployee
         Me.chkVoiceMail.AutoSize = True
         Me.chkVoiceMail.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chkVoiceMail.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkVoiceMail.Location = New System.Drawing.Point(2, 96)
+        Me.chkVoiceMail.Location = New System.Drawing.Point(91, 119)
         Me.chkVoiceMail.Name = "chkVoiceMail"
-        Me.chkVoiceMail.Size = New System.Drawing.Size(86, 19)
+        Me.chkVoiceMail.Size = New System.Drawing.Size(83, 19)
         Me.chkVoiceMail.TabIndex = 25
-        Me.chkVoiceMail.Text = "Voice Mail:"
+        Me.chkVoiceMail.Text = "Voicemail:"
         Me.chkVoiceMail.UseVisualStyleBackColor = True
         '
         'chkCallerID
@@ -371,7 +373,7 @@ Partial Class frmEmployee
         Me.chkCallerID.AutoSize = True
         Me.chkCallerID.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chkCallerID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkCallerID.Location = New System.Drawing.Point(12, 69)
+        Me.chkCallerID.Location = New System.Drawing.Point(14, 92)
         Me.chkCallerID.Name = "chkCallerID"
         Me.chkCallerID.Size = New System.Drawing.Size(76, 19)
         Me.chkCallerID.TabIndex = 23
@@ -383,7 +385,7 @@ Partial Class frmEmployee
         Me.chkWPhone.AutoSize = True
         Me.chkWPhone.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chkWPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkWPhone.Location = New System.Drawing.Point(25, 41)
+        Me.chkWPhone.Location = New System.Drawing.Point(25, 64)
         Me.chkWPhone.Name = "chkWPhone"
         Me.chkWPhone.Size = New System.Drawing.Size(65, 19)
         Me.chkWPhone.TabIndex = 21
@@ -447,29 +449,29 @@ Partial Class frmEmployee
         Me.Label25.TabIndex = 37
         Me.Label25.Text = "Department:"
         '
-        'cboDepartment
+        'cmbDepartment
         '
-        Me.cboDepartment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboDepartment.FormattingEnabled = True
-        Me.cboDepartment.Location = New System.Drawing.Point(105, 12)
-        Me.cboDepartment.Name = "cboDepartment"
-        Me.cboDepartment.Size = New System.Drawing.Size(209, 21)
-        Me.cboDepartment.TabIndex = 11
+        Me.cmbDepartment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbDepartment.FormattingEnabled = True
+        Me.cmbDepartment.Location = New System.Drawing.Point(105, 12)
+        Me.cmbDepartment.Name = "cmbDepartment"
+        Me.cmbDepartment.Size = New System.Drawing.Size(209, 21)
+        Me.cmbDepartment.TabIndex = 11
         '
         'txtOfficePhoneNum
         '
         Me.txtOfficePhoneNum.Enabled = False
         Me.txtOfficePhoneNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOfficePhoneNum.Location = New System.Drawing.Point(189, 40)
+        Me.txtOfficePhoneNum.Location = New System.Drawing.Point(189, 63)
         Me.txtOfficePhoneNum.Name = "txtOfficePhoneNum"
-        Me.txtOfficePhoneNum.Size = New System.Drawing.Size(125, 20)
+        Me.txtOfficePhoneNum.Size = New System.Drawing.Size(120, 20)
         Me.txtOfficePhoneNum.TabIndex = 22
         '
         'Label26
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(91, 43)
+        Me.Label26.Location = New System.Drawing.Point(91, 66)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(94, 15)
         Me.Label26.TabIndex = 45
@@ -488,28 +490,15 @@ Partial Class frmEmployee
         'gbxAcademics
         '
         Me.gbxAcademics.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.gbxAcademics.Controls.Add(Me.btnTitle)
         Me.gbxAcademics.Controls.Add(Me.btnEducation)
-        Me.gbxAcademics.Controls.Add(Me.lblTitle)
-        Me.gbxAcademics.Controls.Add(Me.lstTitle)
         Me.gbxAcademics.Controls.Add(Me.lblEducation)
         Me.gbxAcademics.Controls.Add(Me.lstEducation)
         Me.gbxAcademics.Location = New System.Drawing.Point(786, 25)
         Me.gbxAcademics.Name = "gbxAcademics"
-        Me.gbxAcademics.Size = New System.Drawing.Size(449, 145)
+        Me.gbxAcademics.Size = New System.Drawing.Size(223, 145)
         Me.gbxAcademics.TabIndex = 4
         Me.gbxAcademics.TabStop = False
         Me.gbxAcademics.Text = "Academics"
-        '
-        'btnTitle
-        '
-        Me.btnTitle.BackColor = System.Drawing.Color.Lavender
-        Me.btnTitle.Location = New System.Drawing.Point(360, 10)
-        Me.btnTitle.Name = "btnTitle"
-        Me.btnTitle.Size = New System.Drawing.Size(84, 23)
-        Me.btnTitle.TabIndex = 41
-        Me.btnTitle.Text = "Update Title"
-        Me.btnTitle.UseVisualStyleBackColor = False
         '
         'btnEducation
         '
@@ -520,23 +509,6 @@ Partial Class frmEmployee
         Me.btnEducation.TabIndex = 40
         Me.btnEducation.Text = "Update Education"
         Me.btnEducation.UseVisualStyleBackColor = False
-        '
-        'lblTitle
-        '
-        Me.lblTitle.AutoSize = True
-        Me.lblTitle.Location = New System.Drawing.Point(231, 16)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(30, 13)
-        Me.lblTitle.TabIndex = 3
-        Me.lblTitle.Text = "Title:"
-        '
-        'lstTitle
-        '
-        Me.lstTitle.FormattingEnabled = True
-        Me.lstTitle.Location = New System.Drawing.Point(233, 33)
-        Me.lstTitle.Name = "lstTitle"
-        Me.lstTitle.Size = New System.Drawing.Size(211, 108)
-        Me.lstTitle.TabIndex = 2
         '
         'lblEducation
         '
@@ -709,7 +681,7 @@ Partial Class frmEmployee
         Me.gbxEmailAccounts.Controls.Add(Me.Label31)
         Me.gbxEmailAccounts.Controls.Add(Me.lstEmailAcc)
         Me.gbxEmailAccounts.Controls.Add(Me.btnEmailAcc)
-        Me.gbxEmailAccounts.Location = New System.Drawing.Point(1013, 172)
+        Me.gbxEmailAccounts.Location = New System.Drawing.Point(1015, 25)
         Me.gbxEmailAccounts.Name = "gbxEmailAccounts"
         Me.gbxEmailAccounts.Size = New System.Drawing.Size(222, 148)
         Me.gbxEmailAccounts.TabIndex = 6
@@ -791,7 +763,7 @@ Partial Class frmEmployee
         Me.gbxListServs.Controls.Add(Me.Label29)
         Me.gbxListServs.Controls.Add(Me.lstListServs)
         Me.gbxListServs.Controls.Add(Me.btnListServs)
-        Me.gbxListServs.Location = New System.Drawing.Point(1013, 323)
+        Me.gbxListServs.Location = New System.Drawing.Point(1015, 182)
         Me.gbxListServs.Name = "gbxListServs"
         Me.gbxListServs.Size = New System.Drawing.Size(222, 297)
         Me.gbxListServs.TabIndex = 8
@@ -905,6 +877,34 @@ Partial Class frmEmployee
         Me.lblHardware.TabIndex = 58
         Me.lblHardware.Text = "Assigned Hardware:"
         '
+        'btnEmpReport
+        '
+        Me.btnEmpReport.Location = New System.Drawing.Point(510, 205)
+        Me.btnEmpReport.Name = "btnEmpReport"
+        Me.btnEmpReport.Size = New System.Drawing.Size(100, 30)
+        Me.btnEmpReport.TabIndex = 59
+        Me.btnEmpReport.Text = "Employee Report"
+        Me.btnEmpReport.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(18, 38)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(33, 15)
+        Me.Label1.TabIndex = 82
+        Me.Label1.Text = "Title:"
+        '
+        'cmbTitle
+        '
+        Me.cmbTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbTitle.FormattingEnabled = True
+        Me.cmbTitle.Location = New System.Drawing.Point(57, 37)
+        Me.cmbTitle.Name = "cmbTitle"
+        Me.cmbTitle.Size = New System.Drawing.Size(257, 21)
+        Me.cmbTitle.TabIndex = 81
+        '
         'frmEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -912,6 +912,7 @@ Partial Class frmEmployee
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.Menu
         Me.ClientSize = New System.Drawing.Size(1444, 645)
+        Me.Controls.Add(Me.btnEmpReport)
         Me.Controls.Add(Me.gbxAcademics)
         Me.Controls.Add(Me.lblHardware)
         Me.Controls.Add(Me.gbxPersonal)
@@ -966,15 +967,12 @@ Partial Class frmEmployee
     Friend WithEvents Label51 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents cboDepartment As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbDepartment As System.Windows.Forms.ComboBox
     Friend WithEvents txtOfficePhoneNum As System.Windows.Forms.TextBox
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents gbxAcademics As System.Windows.Forms.GroupBox
-    Friend WithEvents btnTitle As System.Windows.Forms.Button
     Friend WithEvents btnEducation As System.Windows.Forms.Button
-    Friend WithEvents lblTitle As System.Windows.Forms.Label
-    Friend WithEvents lstTitle As System.Windows.Forms.ListBox
     Friend WithEvents lblEducation As System.Windows.Forms.Label
     Friend WithEvents lstEducation As System.Windows.Forms.ListBox
     Friend WithEvents gbxPersonal As System.Windows.Forms.GroupBox
@@ -1025,4 +1023,7 @@ Partial Class frmEmployee
     Friend WithEvents chkLongDist As System.Windows.Forms.CheckBox
     Friend WithEvents lblFloor As System.Windows.Forms.Label
     Friend WithEvents lblLevel As System.Windows.Forms.Label
+    Friend WithEvents btnEmpReport As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cmbTitle As ComboBox
 End Class

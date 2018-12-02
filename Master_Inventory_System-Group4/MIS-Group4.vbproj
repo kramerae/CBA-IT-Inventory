@@ -150,6 +150,12 @@
     <Compile Include="CategoryEditList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Employee\EmployeeReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Employee\frmEmployee.Designer.vb">
       <DependentUpon>frmEmployee.vb</DependentUpon>
     </Compile>
@@ -160,6 +166,12 @@
       <DependentUpon>frmEmployeeDashboard.vb</DependentUpon>
     </Compile>
     <Compile Include="Employee\frmEmployeeDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmEmpReport.Designer.vb">
+      <DependentUpon>frmEmpReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmEmpReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Hardware\frmHardware2Assign.designer.vb">
@@ -204,6 +216,12 @@
     <Compile Include="Hardware\frmHardwareParts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Hardware\frmHardwareReport.Designer.vb">
+      <DependentUpon>frmHardwareReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmHardwareReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Hardware\frmParts.Designer.vb">
       <DependentUpon>frmParts.vb</DependentUpon>
     </Compile>
@@ -221,6 +239,12 @@
     </Compile>
     <Compile Include="Hardware\frmPartsCategory.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hardware\HardwareReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HardwareReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
@@ -339,11 +363,18 @@
     <EmbeddedResource Include="CategoryEditList.resx">
       <DependentUpon>CategoryEditList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EmployeeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\frmEmployee.resx">
       <DependentUpon>frmEmployee.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\frmEmployeeDashboard.resx">
       <DependentUpon>frmEmployeeDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmEmpReport.resx">
+      <DependentUpon>frmEmpReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hardware\frmHardware2Assign.resx">
       <DependentUpon>frmHardware2Assign.vb</DependentUpon>
@@ -366,6 +397,9 @@
     <EmbeddedResource Include="Hardware\frmHardwareParts.resx">
       <DependentUpon>frmHardwareParts.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmHardwareReport.resx">
+      <DependentUpon>frmHardwareReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hardware\frmParts.resx">
       <DependentUpon>frmParts.vb</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +408,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hardware\frmPartsCategory.resx">
       <DependentUpon>frmPartsCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\HardwareReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HardwareReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>

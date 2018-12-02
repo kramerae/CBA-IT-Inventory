@@ -38,7 +38,8 @@ Public Class frmEmployee
             cmbRoomNum_Load()
             cmbRoomSub_Load()
             cmbState_Load()
-            cboDepartment_Load()
+            cmbDepartment_Load()
+            cmbTitle_Load()
             EnableDisableLists()
 
             If m_lngEmployeeID > 0 Then
@@ -97,6 +98,9 @@ Public Class frmEmployee
             gbxListServs.Height = gbxADGroups.Height
             lstListServs.Height = lstADGroups.Height
 
+            btnEmpReport.Top = gbxPersonal.Bottom + 5
+            btnEmpReport.Left = gbxWork.Right + 5
+
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
@@ -148,7 +152,7 @@ Public Class frmEmployee
         End Try
     End Sub
 
-    Private Sub btnTitle_Click(sender As Object, e As EventArgs) Handles btnTitle.Click
+    Private Sub btnTitle_Click(sender As Object, e As EventArgs)
         Try
             frmNetworkExtras.EmployeeID = m_lngEmployeeID
             frmNetworkExtras.FormMode = "Title"
@@ -404,8 +408,10 @@ Public Class frmEmployee
                 txtHomePhone.Text = FormatPhone(rsTemp.Item("txtHomePhone").ToString().Trim())
                 txtCellPhone.Text = FormatPhone(rsTemp.Item("txtCellPhone").ToString().Trim())
                 'Work Section
-                lngSelected = cboDepartment.FindString(rsTemp("txtDepartment").ToString())
-                cboDepartment.SelectedIndex = lngSelected
+                lngSelected = cmbDepartment.FindString(rsTemp("txtDepartment").ToString())
+                cmbDepartment.SelectedIndex = lngSelected
+                lngSelected = cmbTitle.FindString(rsTemp("txtTitle").ToString())
+                cmbTitle.SelectedIndex = lngSelected
                 txtOfficePhoneNum.Text = FormatPhone(rsTemp.Item("txtWorkPhone").ToString().Trim())
                 chkWPhone.Checked = IIf(rsTemp.Item("ysnWPhone").ToString() = "True", True, False)
                 chkCallerID.Checked = IIf(rsTemp.Item("ysnCallerID").ToString() = "True", True, False)
@@ -423,7 +429,6 @@ Public Class frmEmployee
                 'need to add the work information 
             End While
             lbxEdcuation_Populate() : lstEmailAcc_Populate()
-            lbxTitle_Populate() : lstMappedDrives_Populate()
             lstADGroups_Populate() : lstListServs_Populate()
             grdHardware_Format()
         Catch ex As Exception
@@ -482,8 +487,8 @@ Public Class frmEmployee
             qryTemp.Parameters.Add(CreateParameter("txtLongDistCode", SqlDbType.VarChar, ParameterDirection.Input, txtLongDistCode.Text))
             qryTemp.Parameters.Add(CreateParameter("ysnStaffRoster", SqlDbType.Bit, ParameterDirection.Input, IIf(chkStaffRoster.Checked = True, 1, 0)))
             qryTemp.Parameters.Add(CreateParameter("ysnMailRoster", SqlDbType.Bit, ParameterDirection.Input, IIf(chkMailRoster.Checked = True, 1, 0)))
-            qryTemp.Parameters.Add(CreateParameter("FK_lngDepartment", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cboDepartment)))
-
+            qryTemp.Parameters.Add(CreateParameter("FK_lngDepartment", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbDepartment)))
+            qryTemp.Parameters.Add(CreateParameter("FK_lngTitle", SqlDbType.Int, ParameterDirection.Input, GetIntegerID(cmbTitle)))
             qryTemp.Parameters.Add(CreateParameter("FK_lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
 
             objConn.Open()
@@ -509,17 +514,31 @@ Public Class frmEmployee
 #End Region
 #Region "Utility"
 
-    Private Sub cboDepartment_Load()
-
+    Private Sub cmbDepartment_Load()
         Try
-            LoadComboBox(cboDepartment, "qryCBOSearchDepartment_Populate")
-            'cboDepartment.SelectedIndex = 0
+            cmbDepartment.Items.Clear()
+            cmbDepartment.DropDownStyle = ComboBoxStyle.DropDown
+
+            LoadComboBox(cmbDepartment, "qryCBOSearchDepartment_Populate")
 
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally
         End Try
     End Sub
+    Private Sub cmbTitle_Load()
+        Try
+            cmbTitle.Items.Clear()
+            cmbTitle.DropDownStyle = ComboBoxStyle.DropDown
+
+            LoadComboBox(cmbTitle, "qryCBOTitle_Populate")
+
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        Finally
+        End Try
+    End Sub
+
     Private Sub cmbBuilding_Load()
         Try
             cmbBuilding.Items.Clear()
@@ -611,46 +630,6 @@ Public Class frmEmployee
         End Try
     End Sub
 
-    Private Sub lbxTitle_Populate()
-        Dim objConn As SqlConnection = Nothing
-        Dim qryTemp As SqlCommand = Nothing
-        Dim para As SqlParameter = Nothing
-        Dim rsTemp As SqlDataReader = Nothing
-        Dim lngSelected As Integer = Nothing
-        Try
-            lstTitle.Items.Clear()
-
-            objConn = New SqlConnection()
-            objConn.ConnectionString = g_ConnectionString
-
-            qryTemp = New SqlCommand()
-            qryTemp.Connection = objConn
-            qryTemp.CommandType = CommandType.StoredProcedure
-            qryTemp.CommandTimeout = 60
-            qryTemp.CommandText = "qryMainGetTitle"
-
-            para = New SqlParameter()
-            para.ParameterName = "FK_lngEmployee"
-            para.SqlDbType = SqlDbType.Int
-            para.Direction = ParameterDirection.Input
-            para.Value = m_lngEmployeeID
-            qryTemp.Parameters.Add(para)
-
-            objConn.Open()
-            rsTemp = qryTemp.ExecuteReader()
-
-            While rsTemp.Read
-                lstTitle.Items.Add(rsTemp.Item("txtDescription").ToString())
-            End While
-
-        Catch ex As Exception
-            MsgBox(ex.Message & ": lbxTitle_Populate", MsgBoxStyle.Critical, "System Error")
-        Finally
-            Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
-            Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
-            Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
-        End Try
-    End Sub
 
     Private Sub lstADGroups_Populate()
         Dim objConn As SqlConnection = Nothing
@@ -833,10 +812,21 @@ Public Class frmEmployee
             HandleException(Me.Name, ex)
         End Try
     End Sub
+
+    Private Sub btnEmpReport_Click(sender As Object, e As EventArgs) Handles btnEmpReport.Click
+        Dim frmRefReport As frmEmpReport = Nothing
+        Try
+            frmRefReport = New frmEmpReport()
+            frmRefReport.Employee = m_lngEmployeeID
+            frmRefReport.ShowDialog()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
 #End Region
 
-    
-   
-    
-   
+
+
+
+
 End Class

@@ -105,10 +105,12 @@ Public Class frmNetworkExtras
                 Me.Text = m_strName
             ElseIf m_strFormMode = "EditTitle" Then
                 m_strName = "Title"
+                'lblFormTitle.Text = "Edit " & m_strName & " List:"
+                'Me.Text = m_strName
+                'm_bolItemEdit = True
+                'm_strName2 = "Department"  m_strName = "OS Type"
                 lblFormTitle.Text = "Edit " & m_strName & " List:"
                 Me.Text = m_strName
-                m_bolItemEdit = True
-                m_strName2 = "Department"
             ElseIf m_strFormMode = "EditDepartment" Then
                 m_strName = "Department"
                 lblFormTitle.Text = "Edit " & m_strName & " List:"
@@ -213,18 +215,13 @@ Public Class frmNetworkExtras
 
     Private Sub btnApply_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnApply.Click
         Try
-            If m_strFormMode.Contains("Edit") Then
-                If FormValidation() Then
-                    EditFormSave()
 
-                    EditGridFormat()
-                End If
-            Else
-                If FormValidation() Then
-                    FormSave()
-                    GridFormat()
-                End If
+            If FormValidation() Then
+                EditFormSave()
+
+                EditGridFormat()
             End If
+
 
         Catch ex As Exception
             HandleException(Me.Name, ex)
@@ -234,22 +231,22 @@ Public Class frmNetworkExtras
 
     Private Sub btnSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSave.Click
         Try
-            If m_strFormMode <> "EditTitle" Then
-                If m_strFormMode.Contains("Edit") Then
+            ' If m_strFormMode <> "EditTitle" Then
+            If m_strFormMode.Contains("Edit") Then
                     If FormValidation() Then
                         EditFormSave()
                         'Main.Reload_form()
                         Me.Dispose()
                     End If
-                Else
+                '  Else
 
-                    If FormValidation() Then
-                        FormSave()
-                        'Main.Reload_form()
-                        Me.Dispose()
-                    End If
-                End If
+                ' If FormValidation() Then
+                ' FormSave()
+                'Main.Reload_form()
+                ' Me.Dispose()
+                'End If
             End If
+            ' End If
 
         Catch ex As Exception
             HandleException(Me.Name, ex)
@@ -417,7 +414,7 @@ Public Class frmNetworkExtras
                     ElseIf m_strFormMode = "EditEducation" Then
                         qryTemp.CommandText = "qryUpdateEducationLevel"
                     ElseIf m_strFormMode = "EditTitle" Then
-                        qryTemp.CommandText = "qryUpdateTitle"
+                        qryTemp.CommandText = "qryEditTitle_Update"
                     ElseIf m_strFormMode = "EditState" Then
                         qryTemp.CommandText = "qryUpdateState"
                         ysnCode = True
@@ -744,14 +741,14 @@ Public Class frmNetworkExtras
                     .Width = 50
                     .DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                 End With
-                If m_strFormMode = "EditTitle" Then
-                    For i As Integer = 0 To grdList.Columns.Count - 1
-                        With grdList.Columns(i)
-                            .ReadOnly = True
-                        End With
+                'If m_strFormMode = "EditTitle" Then
+                'For i As Integer = 0 To grdList.Columns.Count - 1
+                'With grdList.Columns(i)
+                '.ReadOnly = True
+                'End With
 
-                    Next
-                End If
+                ' Next
+                ' End If
 
             End If
 
@@ -792,7 +789,7 @@ Public Class frmNetworkExtras
                 qryTemp.CommandText = "qryEditEducation_Populate"
             ElseIf m_strFormMode = "EditTitle" Then
                 qryTemp.CommandText = "qryEditTitle_Populate"
-                m_ysnCategory = True
+                'm_ysnCategory = True
             ElseIf m_strFormMode = "EditState" Then
                 qryTemp.CommandText = "qryEditStatePopulate"
                 m_ysnCode = True
