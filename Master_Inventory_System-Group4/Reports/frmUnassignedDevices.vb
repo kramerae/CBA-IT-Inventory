@@ -10,32 +10,37 @@ Public Class frmUnassignedDevices
         Dim dt As DataTable = Nothing
         Dim rpt As UnassignedReport = Nothing
 
-        objConn = New SqlConnection()
-        objConn.ConnectionString = g_ConnectionString
-        objConn.Open()
+        Try
+            objConn = New SqlConnection()
+            objConn.ConnectionString = g_ConnectionString
+            objConn.Open()
 
-        sqlDa = New SqlDataAdapter("qryExcessInventory_Populate", objConn)
-        sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure
-        sqlDa.SelectCommand.Parameters.AddWithValue("lngtype", "")
-        sqlDa.SelectCommand.Parameters.AddWithValue("txtSerialNumber", "")
-        sqlDa.SelectCommand.Parameters.AddWithValue("txtHardwareName", "")
-        sqlDa.SelectCommand.Parameters.AddWithValue("txtServiceTag", "")
-        sqlDa.SelectCommand.Parameters.AddWithValue("txtModelName", "")
-        sqlDa.SelectCommand.Parameters.AddWithValue("txtModelNumber", "")
-        sqlDa.SelectCommand.Parameters.AddWithValue("ysnAssigned", "0")
-        sqlDa.SelectCommand.Parameters.AddWithValue("lngManufacturer", "")
+            sqlDa = New SqlDataAdapter("qryExcessInventory_Populate", objConn)
+            sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure
+            sqlDa.SelectCommand.Parameters.AddWithValue("lngtype", "")
+            sqlDa.SelectCommand.Parameters.AddWithValue("txtSerialNumber", "")
+            sqlDa.SelectCommand.Parameters.AddWithValue("txtHardwareName", "")
+            sqlDa.SelectCommand.Parameters.AddWithValue("txtServiceTag", "")
+            sqlDa.SelectCommand.Parameters.AddWithValue("txtModelName", "")
+            sqlDa.SelectCommand.Parameters.AddWithValue("txtModelNumber", "")
+            sqlDa.SelectCommand.Parameters.AddWithValue("ysnAssigned", "0")
+            sqlDa.SelectCommand.Parameters.AddWithValue("lngManufacturer", "")
 
-        dt = New DataTable()
+            dt = New DataTable()
 
-        sqlDa.Fill(dt)
-        objConn.Close()
+            sqlDa.Fill(dt)
+            objConn.Close()
 
-        rpt = New UnassignedReport()
-        rpt.SetDataSource(dt)
-        rpt.SetDataSource(dt)
-        CrystalReportViewer1.ReportSource = rpt
+            rpt = New UnassignedReport()
+            rpt.SetDataSource(dt)
+            rpt.SetDataSource(dt)
+            CrystalReportViewer1.ReportSource = rpt
 
-        rpt.Refresh()
-        CrystalReportViewer1.Refresh()
+            rpt.Refresh()
+            CrystalReportViewer1.Refresh()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+
     End Sub
 End Class

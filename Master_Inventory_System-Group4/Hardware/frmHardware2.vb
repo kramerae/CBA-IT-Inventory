@@ -320,6 +320,17 @@ Public Class frmHardware2
         End Try
     End Sub
 
+    Private Sub btnSoftwareReport_Click(sender As Object, e As EventArgs) Handles btnSoftwareReport.Click
+        Dim frmRefReport As frmHardwareSoftwareReport = Nothing
+        Try
+            frmRefReport = New frmHardwareSoftwareReport()
+            frmRefReport.Hardware = m_lngHardwareID
+            frmRefReport.ShowDialog()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
 #End Region
 
 End Class

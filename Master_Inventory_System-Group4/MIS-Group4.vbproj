@@ -143,6 +143,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CBAInventoryDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CBAInventoryDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CBAInventoryDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CBAInventoryDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CBAInventoryDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="clsItemData.vb" />
     <Compile Include="CategoryEditList.Designer.vb">
       <DependentUpon>CategoryEditList.vb</DependentUpon>
@@ -222,6 +232,12 @@
     <Compile Include="Hardware\frmHardwareReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Hardware\frmHardwareSoftwareReport.Designer.vb">
+      <DependentUpon>frmHardwareSoftwareReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Hardware\frmHardwareSoftwareReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Hardware\frmParts.Designer.vb">
       <DependentUpon>frmParts.vb</DependentUpon>
     </Compile>
@@ -244,6 +260,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HardwareReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Hardware\HardwareSoftwareReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HardwareSoftwareReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Main.Designer.vb">
@@ -316,10 +338,34 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\EmployeeRoster.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeRoster.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
     <Compile Include="Reports\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmEmployeeRoster.Designer.vb">
+      <DependentUpon>frmEmployeeRoster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmEmployeeRoster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmFullHardwareReport.Designer.vb">
+      <DependentUpon>frmFullHardwareReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmFullHardwareReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmSoftwareReport.Designer.vb">
+      <DependentUpon>frmSoftwareReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmSoftwareReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\frmUnassignedDevices.Designer.vb">
@@ -327,6 +373,18 @@
     </Compile>
     <Compile Include="Reports\frmUnassignedDevices.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\HardwareFullReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HardwareFullReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SoftwareReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SoftwareReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\UnassignedReport.vb">
       <AutoGen>True</AutoGen>
@@ -400,6 +458,9 @@
     <EmbeddedResource Include="Hardware\frmHardwareReport.resx">
       <DependentUpon>frmHardwareReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\frmHardwareSoftwareReport.resx">
+      <DependentUpon>frmHardwareSoftwareReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hardware\frmParts.resx">
       <DependentUpon>frmParts.vb</DependentUpon>
     </EmbeddedResource>
@@ -412,6 +473,10 @@
     <EmbeddedResource Include="Hardware\HardwareReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HardwareReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hardware\HardwareSoftwareReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HardwareSoftwareReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
@@ -447,11 +512,32 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EmployeeRoster.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeRoster.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmEmployeeRoster.resx">
+      <DependentUpon>frmEmployeeRoster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmFullHardwareReport.resx">
+      <DependentUpon>frmFullHardwareReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmSoftwareReport.resx">
+      <DependentUpon>frmSoftwareReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmUnassignedDevices.resx">
       <DependentUpon>frmUnassignedDevices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HardwareFullReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HardwareFullReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SoftwareReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SoftwareReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\UnassignedReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -492,6 +578,28 @@
     </None>
     <None Include="CBAInventoryDataSet1.xss">
       <DependentUpon>CBAInventoryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CBAInventoryDataSet2.xsc">
+      <DependentUpon>CBAInventoryDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CBAInventoryDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CBAInventoryDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CBAInventoryDataSet2.xss">
+      <DependentUpon>CBAInventoryDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CBAInventoryDataSet3.xsc">
+      <DependentUpon>CBAInventoryDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CBAInventoryDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CBAInventoryDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CBAInventoryDataSet3.xss">
+      <DependentUpon>CBAInventoryDataSet3.xsd</DependentUpon>
     </None>
     <None Include="MIS-Group4_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />

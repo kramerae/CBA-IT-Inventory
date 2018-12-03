@@ -41,7 +41,9 @@ Partial Class frmAppDashboard
         Me.pnlLabelReports = New System.Windows.Forms.Panel()
         Me.lblReports = New System.Windows.Forms.Label()
         Me.pnlGrpReports = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnHardwareReport = New System.Windows.Forms.Button()
+        Me.btnSoftwareReport = New System.Windows.Forms.Button()
+        Me.btnEmployeeRoster = New System.Windows.Forms.Button()
         Me.btnUnassignedReport = New System.Windows.Forms.Button()
         Me.pnlLabelEmployee.SuspendLayout()
         Me.pnlGrpEmployee.SuspendLayout()
@@ -236,28 +238,50 @@ Partial Class frmAppDashboard
         'pnlGrpReports
         '
         Me.pnlGrpReports.BackColor = System.Drawing.Color.LightSlateGray
+        Me.pnlGrpReports.Controls.Add(Me.btnHardwareReport)
+        Me.pnlGrpReports.Controls.Add(Me.btnSoftwareReport)
+        Me.pnlGrpReports.Controls.Add(Me.btnEmployeeRoster)
         Me.pnlGrpReports.Controls.Add(Me.btnUnassignedReport)
-        Me.pnlGrpReports.Controls.Add(Me.Button1)
         Me.pnlGrpReports.Controls.Add(Me.pnlLabelReports)
         Me.pnlGrpReports.Location = New System.Drawing.Point(636, 12)
         Me.pnlGrpReports.Name = "pnlGrpReports"
         Me.pnlGrpReports.Size = New System.Drawing.Size(200, 323)
         Me.pnlGrpReports.TabIndex = 4
         '
-        'Button1
+        'btnHardwareReport
         '
-        Me.Button1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(7, 205)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(178, 78)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Report Viewer"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnHardwareReport.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHardwareReport.Location = New System.Drawing.Point(3, 136)
+        Me.btnHardwareReport.Name = "btnHardwareReport"
+        Me.btnHardwareReport.Size = New System.Drawing.Size(178, 78)
+        Me.btnHardwareReport.TabIndex = 6
+        Me.btnHardwareReport.Text = "Hardware Report"
+        Me.btnHardwareReport.UseVisualStyleBackColor = True
+        '
+        'btnSoftwareReport
+        '
+        Me.btnSoftwareReport.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSoftwareReport.Location = New System.Drawing.Point(4, 271)
+        Me.btnSoftwareReport.Name = "btnSoftwareReport"
+        Me.btnSoftwareReport.Size = New System.Drawing.Size(178, 78)
+        Me.btnSoftwareReport.TabIndex = 5
+        Me.btnSoftwareReport.Text = "Software Report"
+        Me.btnSoftwareReport.UseVisualStyleBackColor = True
+        '
+        'btnEmployeeRoster
+        '
+        Me.btnEmployeeRoster.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEmployeeRoster.Location = New System.Drawing.Point(3, 187)
+        Me.btnEmployeeRoster.Name = "btnEmployeeRoster"
+        Me.btnEmployeeRoster.Size = New System.Drawing.Size(178, 78)
+        Me.btnEmployeeRoster.TabIndex = 4
+        Me.btnEmployeeRoster.Text = "Employee Roster"
+        Me.btnEmployeeRoster.UseVisualStyleBackColor = True
         '
         'btnUnassignedReport
         '
         Me.btnUnassignedReport.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUnassignedReport.Location = New System.Drawing.Point(7, 69)
+        Me.btnUnassignedReport.Location = New System.Drawing.Point(3, 52)
         Me.btnUnassignedReport.Name = "btnUnassignedReport"
         Me.btnUnassignedReport.Size = New System.Drawing.Size(178, 78)
         Me.btnUnassignedReport.TabIndex = 3
@@ -268,7 +292,7 @@ Partial Class frmAppDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(817, 347)
+        Me.ClientSize = New System.Drawing.Size(817, 329)
         Me.Controls.Add(Me.pnlGrpReports)
         Me.Controls.Add(Me.pnlGrpSoftware)
         Me.Controls.Add(Me.pnlGrpHardware)
@@ -309,6 +333,8 @@ Partial Class frmAppDashboard
     Friend WithEvents pnlLabelReports As Panel
     Friend WithEvents lblReports As Label
     Friend WithEvents pnlGrpReports As Panel
-    Friend WithEvents Button1 As Button
     Friend WithEvents btnUnassignedReport As Button
+    Friend WithEvents btnEmployeeRoster As Button
+    Friend WithEvents btnSoftwareReport As Button
+    Friend WithEvents btnHardwareReport As Button
 End Class

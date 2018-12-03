@@ -92,8 +92,17 @@ Public Class frmAppDashboard
             lblReports.Top = (pnlLabelReports.Height / 2) - (lblReports.Height / 2)
             lblReports.Left = (pnlLabelReports.Width / 2) - (lblReports.Width / 2)
 
-            btnUnassignedReport.Top = pnlLabelReports.Bottom + 10
-            btnUnassignedReport.Left = (pnlGrpReports.Width / 2) - (btnUnassignedReport.Width / 2)
+            btnEmployeeRoster.Top = pnlLabelReports.Bottom + 10
+            btnEmployeeRoster.Left = (pnlGrpReports.Width / 2) - (btnEmployeeRoster.Width / 2)
+
+            btnHardwareReport.Top = btnEmployeeRoster.Bottom + 10
+            btnHardwareReport.Left = btnEmployeeRoster.Left
+
+            btnUnassignedReport.Top = btnHardwareReport.Bottom + 10
+            btnUnassignedReport.Left = btnEmployeeRoster.Left
+
+            btnSoftwareReport.Top = btnUnassignedReport.Bottom + 10
+            btnSoftwareReport.Left = btnUnassignedReport.Left
 
         Catch ex As Exception
             HandleException(Me.Name, ex)
@@ -200,24 +209,48 @@ Public Class frmAppDashboard
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim frmRefReport As Form1 = Nothing
-        Try
-            frmRefReport = New Form1()
-            frmRefReport.Name = "TestReport"
-            frmRefReport.Tag = "Test Report"
-            frmMDIChildAdd(frmRefReport)
-        Catch ex As Exception
-            HandleException(Me.Name, ex)
-        End Try
-    End Sub
-
     Private Sub btnUnassignedReport_Click(sender As Object, e As EventArgs) Handles btnUnassignedReport.Click
         Dim frmRefReport As frmUnassignedDevices = Nothing
         Try
             frmRefReport = New frmUnassignedDevices()
             frmRefReport.Name = "UnassignedReport"
             frmRefReport.Tag = "Unassigned Report"
+            frmMDIChildAdd(frmRefReport)
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnEmployeeRoster_Click(sender As Object, e As EventArgs) Handles btnEmployeeRoster.Click
+        Dim frmRefReport As frmEmployeeRoster = Nothing
+        Try
+            frmRefReport = New frmEmployeeRoster()
+            frmRefReport.Name = "EmployeeRoster"
+            frmRefReport.Tag = "Employee Roster"
+            frmMDIChildAdd(frmRefReport)
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnSoftwareReport_Click(sender As Object, e As EventArgs) Handles btnSoftwareReport.Click
+        Dim frmRefReport As frmSoftwareReport = Nothing
+        Try
+            frmRefReport = New frmSoftwareReport()
+            frmRefReport.Name = "SoftwareReport"
+            frmRefReport.Tag = "Software Report"
+            frmMDIChildAdd(frmRefReport)
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnHardwareReport_Click(sender As Object, e As EventArgs) Handles btnHardwareReport.Click
+        Dim frmRefReport As frmFullHardwareReport = Nothing
+        Try
+            frmRefReport = New frmFullHardwareReport()
+            frmRefReport.Name = "FullHardwareReport"
+            frmRefReport.Tag = "All Hardware Report"
             frmMDIChildAdd(frmRefReport)
         Catch ex As Exception
             HandleException(Me.Name, ex)

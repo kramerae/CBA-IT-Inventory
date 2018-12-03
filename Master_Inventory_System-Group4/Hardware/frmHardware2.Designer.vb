@@ -91,6 +91,7 @@ Partial Class frmHardware2
         Me.btnUnassign = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btnHardwareReport = New System.Windows.Forms.Button()
+        Me.btnSoftwareReport = New System.Windows.Forms.Button()
         Me.gbxGeneral.SuspendLayout()
         Me.gbxComputer.SuspendLayout()
         Me.gbxNetwork.SuspendLayout()
@@ -704,7 +705,7 @@ Partial Class frmHardware2
         '
         'btnUnassign
         '
-        Me.btnUnassign.Location = New System.Drawing.Point(234, 393)
+        Me.btnUnassign.Location = New System.Drawing.Point(237, 393)
         Me.btnUnassign.Name = "btnUnassign"
         Me.btnUnassign.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.btnUnassign.Size = New System.Drawing.Size(75, 23)
@@ -724,13 +725,23 @@ Partial Class frmHardware2
         '
         'btnHardwareReport
         '
-        Me.btnHardwareReport.Location = New System.Drawing.Point(331, 393)
+        Me.btnHardwareReport.Location = New System.Drawing.Point(436, 266)
         Me.btnHardwareReport.Name = "btnHardwareReport"
         Me.btnHardwareReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.btnHardwareReport.Size = New System.Drawing.Size(75, 23)
+        Me.btnHardwareReport.Size = New System.Drawing.Size(121, 23)
         Me.btnHardwareReport.TabIndex = 43
-        Me.btnHardwareReport.Text = "Report"
+        Me.btnHardwareReport.Text = "Device Report"
         Me.btnHardwareReport.UseVisualStyleBackColor = True
+        '
+        'btnSoftwareReport
+        '
+        Me.btnSoftwareReport.Location = New System.Drawing.Point(436, 296)
+        Me.btnSoftwareReport.Name = "btnSoftwareReport"
+        Me.btnSoftwareReport.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.btnSoftwareReport.Size = New System.Drawing.Size(121, 23)
+        Me.btnSoftwareReport.TabIndex = 44
+        Me.btnSoftwareReport.Text = "Software Report"
+        Me.btnSoftwareReport.UseVisualStyleBackColor = True
         '
         'frmHardware2
         '
@@ -738,6 +749,7 @@ Partial Class frmHardware2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Menu
         Me.ClientSize = New System.Drawing.Size(997, 442)
+        Me.Controls.Add(Me.btnSoftwareReport)
         Me.Controls.Add(Me.btnHardwareReport)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.btnUnassign)
@@ -836,4 +848,5 @@ Partial Class frmHardware2
     Friend WithEvents txtMACAddress As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents btnHardwareReport As Button
+    Friend WithEvents btnSoftwareReport As Button
 End Class
