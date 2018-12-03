@@ -233,19 +233,19 @@ Public Class frmNetworkExtras
         Try
             ' If m_strFormMode <> "EditTitle" Then
             If m_strFormMode.Contains("Edit") Then
-                    If FormValidation() Then
-                        EditFormSave()
-                        'Main.Reload_form()
-                        Me.Dispose()
-                    End If
+                If FormValidation() Then
+                    EditFormSave()
+                    'Main.Reload_form()
+                    Me.Dispose()
+                End If
                 '  Else
-
-                ' If FormValidation() Then
-                ' FormSave()
-                'Main.Reload_form()
-                ' Me.Dispose()
-                'End If
             End If
+            If FormValidation() Then
+                FormSave()
+                'Main.Reload_form()
+                Me.Dispose()
+            End If
+
             ' End If
 
         Catch ex As Exception

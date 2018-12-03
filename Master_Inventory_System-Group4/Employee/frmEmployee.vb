@@ -85,7 +85,7 @@ Public Class frmEmployee
             gbxMappedDrives.Top = gbxAcademics.Bottom + 5
             gbxMappedDrives.Left = gbxAcademics.Left
 
-            gbxEmailAccounts.Top = gbxMappedDrives.Top
+            gbxEmailAccounts.Top = gbxAcademics.Top
             gbxEmailAccounts.Left = 5 + gbxMappedDrives.Right
 
             gbxADGroups.Left = gbxAcademics.Left
@@ -94,7 +94,7 @@ Public Class frmEmployee
             lstADGroups.Height = gbxADGroups.Height - lstADGroups.Top - 5
 
             gbxListServs.Left = gbxADGroups.Right + 5
-            gbxListServs.Top = gbxADGroups.Top
+            gbxListServs.Top = gbxMappedDrives.Top
             gbxListServs.Height = gbxADGroups.Height
             lstListServs.Height = lstADGroups.Height
 

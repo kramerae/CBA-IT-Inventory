@@ -152,22 +152,12 @@ Public Class frmAppDashboard
     End Sub
 
     Private Sub btnHardwareNew_Click(sender As Object, e As EventArgs) Handles btnHardwareNew.Click
-        'Dim frmRefHardware As frmHardware2
-        'Dim frmRefHardwareParts As frmHardwareParts
         Dim frmRefHardwareNew As frmHardwareNew
         Try
             frmRefHardwareNew = New frmHardwareNew()
             frmRefHardwareNew.Name = "NewHardware"
             frmRefHardwareNew.Tag = "New Hardware"
             frmMDIChildAdd(frmRefHardwareNew)
-            'frmRefHardwareParts = New frmHardwareParts()
-            'frmRefHardwareParts.Name = "Test"
-            'frmRefHardwareParts.Tag = "Test"
-            'frmMDIChildAdd(frmRefHardwareParts)
-            'frmRefHardware = New frmHardware2()
-            'frmRefHardware.Name = "HardwareNew"
-            'frmRefHardware.Tag = "Hardware - New"
-            'frmMDIChildAdd(frmRefHardware)
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try

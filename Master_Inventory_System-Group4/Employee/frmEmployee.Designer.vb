@@ -35,6 +35,8 @@ Partial Class frmEmployee
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.gbxWork = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmbTitle = New System.Windows.Forms.ComboBox()
         Me.lblFloor = New System.Windows.Forms.Label()
         Me.lblLevel = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
@@ -98,8 +100,6 @@ Partial Class frmEmployee
         Me.grdHardware = New System.Windows.Forms.DataGridView()
         Me.lblHardware = New System.Windows.Forms.Label()
         Me.btnEmpReport = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cmbTitle = New System.Windows.Forms.ComboBox()
         Me.gbxAccountInfo.SuspendLayout()
         Me.gbxWork.SuspendLayout()
         Me.gbxAcademics.SuspendLayout()
@@ -254,6 +254,25 @@ Partial Class frmEmployee
         Me.gbxWork.TabIndex = 3
         Me.gbxWork.TabStop = False
         Me.gbxWork.Text = "Work"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(18, 38)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(33, 15)
+        Me.Label1.TabIndex = 82
+        Me.Label1.Text = "Title:"
+        '
+        'cmbTitle
+        '
+        Me.cmbTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbTitle.FormattingEnabled = True
+        Me.cmbTitle.Location = New System.Drawing.Point(57, 37)
+        Me.cmbTitle.Name = "cmbTitle"
+        Me.cmbTitle.Size = New System.Drawing.Size(257, 21)
+        Me.cmbTitle.TabIndex = 81
         '
         'lblFloor
         '
@@ -885,25 +904,6 @@ Partial Class frmEmployee
         Me.btnEmpReport.TabIndex = 59
         Me.btnEmpReport.Text = "Employee Report"
         Me.btnEmpReport.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(18, 38)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(33, 15)
-        Me.Label1.TabIndex = 82
-        Me.Label1.Text = "Title:"
-        '
-        'cmbTitle
-        '
-        Me.cmbTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbTitle.FormattingEnabled = True
-        Me.cmbTitle.Location = New System.Drawing.Point(57, 37)
-        Me.cmbTitle.Name = "cmbTitle"
-        Me.cmbTitle.Size = New System.Drawing.Size(257, 21)
-        Me.cmbTitle.TabIndex = 81
         '
         'frmEmployee
         '
