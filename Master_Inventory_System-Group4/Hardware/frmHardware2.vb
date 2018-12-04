@@ -93,6 +93,49 @@ Public Class frmHardware2
         Hardware_Populate()
         'Me.Close()
     End Sub
+
+    Private Sub btnHardwareReport_Click(sender As Object, e As EventArgs) Handles btnHardwareReport.Click
+        Dim frmRefReport As frmHardwareReport = Nothing
+        Try
+            frmRefReport = New frmHardwareReport()
+            frmRefReport.Hardware = m_lngHardwareID
+            frmRefReport.ShowDialog()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnSoftwareReport_Click(sender As Object, e As EventArgs) Handles btnSoftwareReport.Click
+        Dim frmRefReport As frmHardwareSoftwareReport = Nothing
+        Try
+            frmRefReport = New frmHardwareSoftwareReport()
+            frmRefReport.Hardware = m_lngHardwareID
+            frmRefReport.ShowDialog()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnDeactivate_Click(sender As Object, e As EventArgs) Handles btnDeactivate.Click
+        Dim message As String = "Are you sure you want to deactivate " + txtDeviceName.Text.Trim + "? This action cannot be undone."
+        Dim dlgR As DialogResult
+        dlgR = MessageBox.Show(message, "Deactivate Hardware", MessageBoxButtons.YesNo)
+        Try
+            If dlgR = DialogResult.Yes Then
+                DeactivateHardware_Save()
+                btnUpdate.Enabled = False
+                btnUnassign.Enabled = False
+                btnAssign.Enabled = False
+                btnDeactivate.Enabled = False
+                btnSoftwareReport.Enabled = False
+                btnHardwareReport.Enabled = False
+            End If
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+        'Me.Dispose()
+        'Hardware_Populate()
+    End Sub
 #End Region
 
 #Region "Populate/Save/Validate"
@@ -268,6 +311,44 @@ Public Class frmHardware2
             objConn.Close()
             qryTemp.Dispose()
 
+
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        Finally
+            Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
+            Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
+            Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
+            'Me.Dispose()
+        End Try
+    End Sub
+
+    Private Sub DeactivateHardware_Save()
+        Dim objConn As SqlConnection = Nothing
+        Dim qryTemp As SqlCommand = Nothing
+        Dim para As SqlParameter = Nothing
+        Dim rsTemp As SqlDataReader = Nothing
+
+        Try
+            objConn = New SqlConnection()
+            objConn.ConnectionString = g_ConnectionString
+
+            qryTemp = New SqlCommand()
+            qryTemp.Connection = objConn
+            qryTemp.CommandType = CommandType.StoredProcedure
+            qryTemp.CommandTimeout = 60
+            qryTemp.CommandText = "qryHardwareDeactivate"
+            qryTemp.Parameters.Add(CreateParameter("@FK_lngHardware", SqlDbType.Int, ParameterDirection.Input, m_lngHardwareID))
+            qryTemp.Parameters.Add(CreateParameter("@lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
+
+
+            objConn.Open()
+            qryTemp.ExecuteNonQuery()
+
+            objConn.Close()
+            qryTemp.Dispose()
+
+            MsgBox("Deactivate successful.", MsgBoxStyle.Exclamation, "Validation Message")
+
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally
@@ -304,28 +385,6 @@ Public Class frmHardware2
     Private Sub cmbHardwareType_Load()
         Try
             LoadComboBox(cmbHardwareType, "qryCBOHardwareType_Populate")
-        Catch ex As Exception
-            HandleException(Me.Name, ex)
-        End Try
-    End Sub
-
-    Private Sub btnHardwareReport_Click(sender As Object, e As EventArgs) Handles btnHardwareReport.Click
-        Dim frmRefReport As frmHardwareReport = Nothing
-        Try
-            frmRefReport = New frmHardwareReport()
-            frmRefReport.Hardware = m_lngHardwareID
-            frmRefReport.ShowDialog()
-        Catch ex As Exception
-            HandleException(Me.Name, ex)
-        End Try
-    End Sub
-
-    Private Sub btnSoftwareReport_Click(sender As Object, e As EventArgs) Handles btnSoftwareReport.Click
-        Dim frmRefReport As frmHardwareSoftwareReport = Nothing
-        Try
-            frmRefReport = New frmHardwareSoftwareReport()
-            frmRefReport.Hardware = m_lngHardwareID
-            frmRefReport.ShowDialog()
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try

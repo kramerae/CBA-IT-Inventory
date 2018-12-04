@@ -109,7 +109,8 @@ Public Class frmAssignEquipment
             Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
             Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
             Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
-            Me.Dispose()
+            'Me.Dispose()
+            grdHardware_Populate()
         End Try
     End Sub
     Private Sub grdHardware_Format()

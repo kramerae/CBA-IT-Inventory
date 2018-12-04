@@ -92,6 +92,7 @@ Partial Class frmHardware2
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btnHardwareReport = New System.Windows.Forms.Button()
         Me.btnSoftwareReport = New System.Windows.Forms.Button()
+        Me.btnDeactivate = New System.Windows.Forms.Button()
         Me.gbxGeneral.SuspendLayout()
         Me.gbxComputer.SuspendLayout()
         Me.gbxNetwork.SuspendLayout()
@@ -298,7 +299,7 @@ Partial Class frmHardware2
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(35, 393)
+        Me.btnUpdate.Location = New System.Drawing.Point(25, 393)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.TabIndex = 23
@@ -307,7 +308,7 @@ Partial Class frmHardware2
         '
         'btnAssign
         '
-        Me.btnAssign.Location = New System.Drawing.Point(136, 393)
+        Me.btnAssign.Location = New System.Drawing.Point(126, 393)
         Me.btnAssign.Name = "btnAssign"
         Me.btnAssign.Size = New System.Drawing.Size(75, 23)
         Me.btnAssign.TabIndex = 24
@@ -705,7 +706,7 @@ Partial Class frmHardware2
         '
         'btnUnassign
         '
-        Me.btnUnassign.Location = New System.Drawing.Point(237, 393)
+        Me.btnUnassign.Location = New System.Drawing.Point(227, 393)
         Me.btnUnassign.Name = "btnUnassign"
         Me.btnUnassign.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.btnUnassign.Size = New System.Drawing.Size(75, 23)
@@ -743,12 +744,23 @@ Partial Class frmHardware2
         Me.btnSoftwareReport.Text = "Software Report"
         Me.btnSoftwareReport.UseVisualStyleBackColor = True
         '
+        'btnDeactivate
+        '
+        Me.btnDeactivate.Location = New System.Drawing.Point(325, 393)
+        Me.btnDeactivate.Name = "btnDeactivate"
+        Me.btnDeactivate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.btnDeactivate.Size = New System.Drawing.Size(75, 23)
+        Me.btnDeactivate.TabIndex = 45
+        Me.btnDeactivate.Text = "Deactivate"
+        Me.btnDeactivate.UseVisualStyleBackColor = True
+        '
         'frmHardware2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Menu
         Me.ClientSize = New System.Drawing.Size(997, 442)
+        Me.Controls.Add(Me.btnDeactivate)
         Me.Controls.Add(Me.btnSoftwareReport)
         Me.Controls.Add(Me.btnHardwareReport)
         Me.Controls.Add(Me.Label15)
@@ -849,4 +861,5 @@ Partial Class frmHardware2
     Friend WithEvents Label18 As Label
     Friend WithEvents btnHardwareReport As Button
     Friend WithEvents btnSoftwareReport As Button
+    Friend WithEvents btnDeactivate As Button
 End Class
