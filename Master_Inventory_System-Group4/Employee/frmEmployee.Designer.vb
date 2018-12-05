@@ -100,6 +100,7 @@ Partial Class frmEmployee
         Me.grdHardware = New System.Windows.Forms.DataGridView()
         Me.lblHardware = New System.Windows.Forms.Label()
         Me.btnEmpReport = New System.Windows.Forms.Button()
+        Me.btnDeactivate = New System.Windows.Forms.Button()
         Me.gbxAccountInfo.SuspendLayout()
         Me.gbxWork.SuspendLayout()
         Me.gbxAcademics.SuspendLayout()
@@ -905,6 +906,16 @@ Partial Class frmEmployee
         Me.btnEmpReport.Text = "Employee Report"
         Me.btnEmpReport.UseVisualStyleBackColor = True
         '
+        'btnDeactivate
+        '
+        Me.btnDeactivate.Location = New System.Drawing.Point(143, 611)
+        Me.btnDeactivate.Name = "btnDeactivate"
+        Me.btnDeactivate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.btnDeactivate.Size = New System.Drawing.Size(122, 29)
+        Me.btnDeactivate.TabIndex = 60
+        Me.btnDeactivate.Text = "Deactivate"
+        Me.btnDeactivate.UseVisualStyleBackColor = True
+        '
         'frmEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -912,6 +923,7 @@ Partial Class frmEmployee
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.Menu
         Me.ClientSize = New System.Drawing.Size(1444, 645)
+        Me.Controls.Add(Me.btnDeactivate)
         Me.Controls.Add(Me.btnEmpReport)
         Me.Controls.Add(Me.gbxAcademics)
         Me.Controls.Add(Me.lblHardware)
@@ -1026,4 +1038,5 @@ Partial Class frmEmployee
     Friend WithEvents btnEmpReport As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents cmbTitle As ComboBox
+    Friend WithEvents btnDeactivate As Button
 End Class

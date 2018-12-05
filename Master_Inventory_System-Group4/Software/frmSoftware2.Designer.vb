@@ -36,6 +36,7 @@ Partial Class frmSoftware2
         Me.lstSoftwareDevices = New System.Windows.Forms.ListBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnAssign = New System.Windows.Forms.Button()
+        Me.btnDeactivate = New System.Windows.Forms.Button()
         Me.gbxGeneral.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -166,11 +167,22 @@ Partial Class frmSoftware2
         Me.btnAssign.Text = "Assign"
         Me.btnAssign.UseVisualStyleBackColor = True
         '
+        'btnDeactivate
+        '
+        Me.btnDeactivate.Location = New System.Drawing.Point(307, 78)
+        Me.btnDeactivate.Name = "btnDeactivate"
+        Me.btnDeactivate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.btnDeactivate.Size = New System.Drawing.Size(75, 23)
+        Me.btnDeactivate.TabIndex = 61
+        Me.btnDeactivate.Text = "Deactivate"
+        Me.btnDeactivate.UseVisualStyleBackColor = True
+        '
         'frmSoftware2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 439)
+        Me.Controls.Add(Me.btnDeactivate)
         Me.Controls.Add(Me.btnAssign)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.Label28)
@@ -200,4 +212,5 @@ Partial Class frmSoftware2
     Friend WithEvents lstSoftwareDevices As ListBox
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnAssign As Button
+    Friend WithEvents btnDeactivate As Button
 End Class

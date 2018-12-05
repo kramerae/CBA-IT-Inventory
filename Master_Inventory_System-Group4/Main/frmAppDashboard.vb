@@ -180,7 +180,7 @@ Public Class frmAppDashboard
         Try
             frmRefSoftwareDashboard = New frmSoftwareDashboard()
             frmRefSoftwareDashboard.Name = "SoftwareDashboard"
-            frmRefSoftwareDashboard.Tag = "Sofware Dashboard"
+            frmRefSoftwareDashboard.Tag = "Software Dashboard"
             frmMDIChildAdd(frmRefSoftwareDashboard)
         Catch ex As Exception
             HandleException(Me.Name, ex)

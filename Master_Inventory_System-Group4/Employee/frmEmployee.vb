@@ -59,6 +59,8 @@ Public Class frmEmployee
             btnUpdateAdd.Top = (Me.Height - btnUpdateAdd.Height - 50)
             btnNewStaffCancel.Top = btnUpdateAdd.Top
             btnNewStaffCancel.Left = Me.Left + 20
+            btnDeactivate.Top = btnUpdateAdd.Top
+            btnDeactivate.Left = Me.Left + 20
 
             'lblHardware.Top = gbxADGroupList.Bottom + 5
             lblHardware.Left = gbxAccountInfo.Left
@@ -210,7 +212,13 @@ Public Class frmEmployee
 
     Private Sub btnUpdateAdd_Click(sender As Object, e As EventArgs) Handles btnUpdateAdd.Click
         Try
-            AddEmployee_Save()
+            If cmbTitle.SelectedIndex = 0 Then
+                MsgBox("Please select a title.", MsgBoxStyle.Exclamation, "Error Message")
+            ElseIf cmbRoomNum.SelectedIndex = 0 Then
+                MsgBox("Please select a room number.", MsgBoxStyle.Exclamation, "Error Message")
+            Else
+                AddEmployee_Save()
+            End If
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
@@ -582,7 +590,7 @@ Public Class frmEmployee
             cmbState.AutoCompleteSource = AutoCompleteSource.ListItems
 
             LoadComboBox(cmbState, "qryCBOState_Populate")
-            'cboState.SelectedIndex = 0
+            'cmbState.SelectedIndex = 0
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally
@@ -794,6 +802,44 @@ Public Class frmEmployee
             Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
         End Try
     End Sub
+
+    Private Sub DeactivateEmployee_Save()
+        Dim objConn As SqlConnection = Nothing
+        Dim qryTemp As SqlCommand = Nothing
+        Dim para As SqlParameter = Nothing
+        Dim rsTemp As SqlDataReader = Nothing
+
+        Try
+            objConn = New SqlConnection()
+            objConn.ConnectionString = g_ConnectionString
+
+            qryTemp = New SqlCommand()
+            qryTemp.Connection = objConn
+            qryTemp.CommandType = CommandType.StoredProcedure
+            qryTemp.CommandTimeout = 60
+            qryTemp.CommandText = "qryEmployeeDeactivate"
+            qryTemp.Parameters.Add(CreateParameter("@FK_lngEmployee", SqlDbType.Int, ParameterDirection.Input, m_lngEmployeeID))
+            qryTemp.Parameters.Add(CreateParameter("@lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
+
+
+            objConn.Open()
+            qryTemp.ExecuteNonQuery()
+
+            objConn.Close()
+            qryTemp.Dispose()
+
+            MsgBox("Deactivate successful.", MsgBoxStyle.Exclamation, "Validation Message")
+
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        Finally
+            Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
+            Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
+            Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
+            'Me.Dispose()
+        End Try
+    End Sub
+
     Private Sub EnableDisableLists()
         Dim bolEnabled As Boolean = False
         Try
@@ -819,6 +865,22 @@ Public Class frmEmployee
             frmRefReport = New frmEmpReport()
             frmRefReport.Employee = m_lngEmployeeID
             frmRefReport.ShowDialog()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnDeactivate_Click(sender As Object, e As EventArgs) Handles btnDeactivate.Click
+        Dim message As String = "Are you sure you want to deactivate " + txtFirstName.Text.Trim + " " + txtLastName.Text.Trim + "? This action cannot be undone."
+        Dim dlgR As DialogResult
+        dlgR = MessageBox.Show(message, "Deactivate Employee", MessageBoxButtons.YesNo)
+        Try
+            If dlgR = DialogResult.Yes Then
+                DeactivateEmployee_Save()
+                btnUpdateAdd.Enabled = False
+                btnNewStaffCancel.Enabled = False
+                btnDeactivate.Enabled = False
+            End If
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try

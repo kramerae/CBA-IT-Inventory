@@ -187,6 +187,43 @@ Public Class frmSoftware2
             Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
         End Try
     End Sub
+
+    Private Sub DeactivateSoftware_Save()
+        Dim objConn As SqlConnection = Nothing
+        Dim qryTemp As SqlCommand = Nothing
+        Dim para As SqlParameter = Nothing
+        Dim rsTemp As SqlDataReader = Nothing
+
+        Try
+            objConn = New SqlConnection()
+            objConn.ConnectionString = g_ConnectionString
+
+            qryTemp = New SqlCommand()
+            qryTemp.Connection = objConn
+            qryTemp.CommandType = CommandType.StoredProcedure
+            qryTemp.CommandTimeout = 60
+            qryTemp.CommandText = "qrySoftwareDeactivate"
+            qryTemp.Parameters.Add(CreateParameter("@FK_lngSoftware", SqlDbType.Int, ParameterDirection.Input, m_lngSoftwareID))
+            qryTemp.Parameters.Add(CreateParameter("@lngUser", SqlDbType.Int, ParameterDirection.Input, g_lngLoggedUser))
+
+
+            objConn.Open()
+            qryTemp.ExecuteNonQuery()
+
+            objConn.Close()
+            qryTemp.Dispose()
+
+            MsgBox("Deactivate successful.", MsgBoxStyle.Exclamation, "Validation Message")
+
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        Finally
+            Try : rsTemp.Close() : rsTemp = Nothing : Catch : End Try
+            Try : qryTemp.Dispose() : qryTemp = Nothing : Catch : End Try
+            Try : If objConn.State <> System.Data.ConnectionState.Closed Then : objConn.Close() : End If : objConn = Nothing : Catch : End Try
+            'Me.Dispose()
+        End Try
+    End Sub
 #End Region
 
 #Region "Utility"
@@ -212,6 +249,22 @@ Public Class frmSoftware2
             frmAssignSoftware.Employee = m_lngEmployeeID
             frmAssignSoftware.ShowDialog()
             Software_Save()
+        Catch ex As Exception
+            HandleException(Me.Name, ex)
+        End Try
+    End Sub
+
+    Private Sub btnDeactivate_Click(sender As Object, e As EventArgs) Handles btnDeactivate.Click
+        Dim message As String = "Are you sure you want to deactivate " + txtSoftwareName.Text.Trim + " " + txtSoftwareVersion.Text.Trim + "? This action cannot be undone."
+        Dim dlgR As DialogResult
+        dlgR = MessageBox.Show(message, "Deactivate Software", MessageBoxButtons.YesNo)
+        Try
+            If dlgR = DialogResult.Yes Then
+                DeactivateSoftware_Save()
+                btnAssign.Enabled = False
+                btnUpdate.Enabled = False
+                btnDeactivate.Enabled = False
+            End If
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
