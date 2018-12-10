@@ -438,6 +438,7 @@ Public Class frmEmployee
             End While
             lbxEdcuation_Populate() : lstEmailAcc_Populate()
             lstADGroups_Populate() : lstListServs_Populate()
+            lstMappedDrives_Populate() : lstMappedDrives_Populate()
             grdHardware_Format()
         Catch ex As Exception
             HandleException(Me.Name, ex)
