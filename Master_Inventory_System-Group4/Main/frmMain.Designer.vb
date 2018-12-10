@@ -98,6 +98,7 @@ Partial Class frmMain
         'NewToolStripMenuItem1
         '
         Me.NewToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountToolStripMenuItem1, Me.HardwareToolStripMenuItem, Me.SoftwareToolStripMenuItem})
+        Me.NewToolStripMenuItem1.Enabled = False
         Me.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1"
         Me.NewToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.NewToolStripMenuItem1.Text = "&New"
@@ -105,20 +106,23 @@ Partial Class frmMain
         'AccountToolStripMenuItem1
         '
         Me.AccountToolStripMenuItem1.Name = "AccountToolStripMenuItem1"
-        Me.AccountToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
+        Me.AccountToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.AccountToolStripMenuItem1.Text = "&Account"
+        Me.AccountToolStripMenuItem1.Visible = False
         '
         'HardwareToolStripMenuItem
         '
         Me.HardwareToolStripMenuItem.Name = "HardwareToolStripMenuItem"
-        Me.HardwareToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.HardwareToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.HardwareToolStripMenuItem.Text = "&Hardware"
+        Me.HardwareToolStripMenuItem.Visible = False
         '
         'SoftwareToolStripMenuItem
         '
         Me.SoftwareToolStripMenuItem.Name = "SoftwareToolStripMenuItem"
-        Me.SoftwareToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.SoftwareToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SoftwareToolStripMenuItem.Text = "&Software"
+        Me.SoftwareToolStripMenuItem.Visible = False
         '
         'AccountToolStripMenuItem
         '
@@ -130,13 +134,13 @@ Partial Class frmMain
         'DashboardToolStripMenuItem
         '
         Me.DashboardToolStripMenuItem.Name = "DashboardToolStripMenuItem"
-        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DashboardToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.DashboardToolStripMenuItem.Text = "&Dashboard"
         '
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.NewToolStripMenuItem.Text = "&New"
         '
         'HardwareToolStripMenuItem1
@@ -149,13 +153,13 @@ Partial Class frmMain
         'DashboardToolStripMenuItem1
         '
         Me.DashboardToolStripMenuItem1.Name = "DashboardToolStripMenuItem1"
-        Me.DashboardToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.DashboardToolStripMenuItem1.Size = New System.Drawing.Size(131, 22)
         Me.DashboardToolStripMenuItem1.Text = "&Dashboard"
         '
         'NewToolStripMenuItem2
         '
         Me.NewToolStripMenuItem2.Name = "NewToolStripMenuItem2"
-        Me.NewToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.NewToolStripMenuItem2.Size = New System.Drawing.Size(131, 22)
         Me.NewToolStripMenuItem2.Text = "&New"
         '
         'SoftwareToolStripMenuItem1
@@ -168,13 +172,13 @@ Partial Class frmMain
         'DashboardToolStripMenuItem2
         '
         Me.DashboardToolStripMenuItem2.Name = "DashboardToolStripMenuItem2"
-        Me.DashboardToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.DashboardToolStripMenuItem2.Size = New System.Drawing.Size(131, 22)
         Me.DashboardToolStripMenuItem2.Text = "&Dashboard"
         '
         'NewToolStripMenuItem3
         '
         Me.NewToolStripMenuItem3.Name = "NewToolStripMenuItem3"
-        Me.NewToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
+        Me.NewToolStripMenuItem3.Size = New System.Drawing.Size(131, 22)
         Me.NewToolStripMenuItem3.Text = "&New"
         '
         'MaintenanceToolStripMenuItem
@@ -187,150 +191,150 @@ Partial Class frmMain
         'ActiveDirectoryToolStripMenuItem
         '
         Me.ActiveDirectoryToolStripMenuItem.Name = "ActiveDirectoryToolStripMenuItem"
-        Me.ActiveDirectoryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ActiveDirectoryToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ActiveDirectoryToolStripMenuItem.Text = "Active Directory"
         '
         'EducationLevelToolStripMenuItem
         '
         Me.EducationLevelToolStripMenuItem.Name = "EducationLevelToolStripMenuItem"
-        Me.EducationLevelToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EducationLevelToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.EducationLevelToolStripMenuItem.Text = "Education Level"
         '
         'EmailAccountsToolStripMenuItem
         '
         Me.EmailAccountsToolStripMenuItem.Name = "EmailAccountsToolStripMenuItem"
-        Me.EmailAccountsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmailAccountsToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.EmailAccountsToolStripMenuItem.Text = "Email Accounts"
         '
         'ListServToolStripMenuItem
         '
         Me.ListServToolStripMenuItem.Name = "ListServToolStripMenuItem"
-        Me.ListServToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ListServToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ListServToolStripMenuItem.Text = "List Serv"
         '
         'MappedDrivesToolStripMenuItem
         '
         Me.MappedDrivesToolStripMenuItem.Name = "MappedDrivesToolStripMenuItem"
-        Me.MappedDrivesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MappedDrivesToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.MappedDrivesToolStripMenuItem.Text = "Mapped Drives"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(159, 6)
         '
         'DepartmentToolStripMenuItem
         '
         Me.DepartmentToolStripMenuItem.Name = "DepartmentToolStripMenuItem"
-        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.DepartmentToolStripMenuItem.Text = "Department"
         '
         'TitleToolStripMenuItem
         '
         Me.TitleToolStripMenuItem.Name = "TitleToolStripMenuItem"
-        Me.TitleToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TitleToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.TitleToolStripMenuItem.Text = "Title"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(159, 6)
         '
         'BuildingToolStripMenuItem
         '
         Me.BuildingToolStripMenuItem.Name = "BuildingToolStripMenuItem"
-        Me.BuildingToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BuildingToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.BuildingToolStripMenuItem.Text = "Building"
         '
         'OfficeToolStripMenuItem
         '
         Me.OfficeToolStripMenuItem.Name = "OfficeToolStripMenuItem"
-        Me.OfficeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OfficeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.OfficeToolStripMenuItem.Text = "Office Number"
         '
         'OfficeSubLettersToolStripMenuItem
         '
         Me.OfficeSubLettersToolStripMenuItem.Name = "OfficeSubLettersToolStripMenuItem"
-        Me.OfficeSubLettersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OfficeSubLettersToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.OfficeSubLettersToolStripMenuItem.Text = "Office Sub Letter"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(159, 6)
         '
         'HardwareTypeToolStripMenuItem
         '
         Me.HardwareTypeToolStripMenuItem.Name = "HardwareTypeToolStripMenuItem"
-        Me.HardwareTypeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.HardwareTypeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.HardwareTypeToolStripMenuItem.Text = "Hardware Type"
         '
         'ManufacturerToolStripMenuItem
         '
         Me.ManufacturerToolStripMenuItem.Name = "ManufacturerToolStripMenuItem"
-        Me.ManufacturerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ManufacturerToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.ManufacturerToolStripMenuItem.Text = "Manufacturer"
         '
         'IPAddressToolStripMenuItem
         '
         Me.IPAddressToolStripMenuItem.Name = "IPAddressToolStripMenuItem"
-        Me.IPAddressToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.IPAddressToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.IPAddressToolStripMenuItem.Text = "IP Address"
         '
         'OSTypeToolStripMenuItem
         '
         Me.OSTypeToolStripMenuItem.Name = "OSTypeToolStripMenuItem"
-        Me.OSTypeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OSTypeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.OSTypeToolStripMenuItem.Text = "OS Type"
         '
         'SoftwareTypeToolStripMenuItem
         '
         Me.SoftwareTypeToolStripMenuItem.Name = "SoftwareTypeToolStripMenuItem"
-        Me.SoftwareTypeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SoftwareTypeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.SoftwareTypeToolStripMenuItem.Text = "Software Type"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(159, 6)
         '
         'StateToolStripMenuItem
         '
         Me.StateToolStripMenuItem.Name = "StateToolStripMenuItem"
-        Me.StateToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.StateToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.StateToolStripMenuItem.Text = "State"
         '
         'PartsToolStripMenuItem
         '
         Me.PartsToolStripMenuItem.Enabled = False
         Me.PartsToolStripMenuItem.Name = "PartsToolStripMenuItem"
-        Me.PartsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PartsToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.PartsToolStripMenuItem.Text = "Parts"
         '
         'PartsCategoriesToolStripMenuItem
         '
         Me.PartsCategoriesToolStripMenuItem.Enabled = False
         Me.PartsCategoriesToolStripMenuItem.Name = "PartsCategoriesToolStripMenuItem"
-        Me.PartsCategoriesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PartsCategoriesToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.PartsCategoriesToolStripMenuItem.Text = "Parts Categories"
         '
         'UserToolStripMenuItem
         '
         Me.UserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserAdministrationToolStripMenuItem, Me.LogOffToolStripMenuItem})
         Me.UserToolStripMenuItem.Name = "UserToolStripMenuItem"
-        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(122, 20)
+        Me.UserToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
         Me.UserToolStripMenuItem.Text = "&User"
         '
         'UserAdministrationToolStripMenuItem
         '
         Me.UserAdministrationToolStripMenuItem.Name = "UserAdministrationToolStripMenuItem"
-        Me.UserAdministrationToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UserAdministrationToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.UserAdministrationToolStripMenuItem.Text = "User &Administration"
         '
         'LogOffToolStripMenuItem
         '
         Me.LogOffToolStripMenuItem.Name = "LogOffToolStripMenuItem"
-        Me.LogOffToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LogOffToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
         Me.LogOffToolStripMenuItem.Text = "Log &Off"
         '
         'pnlBanner

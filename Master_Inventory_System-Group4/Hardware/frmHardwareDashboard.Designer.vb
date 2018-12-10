@@ -150,9 +150,9 @@ Partial Class frmHardwareDashboard
         Me.lblModelNumber.AutoSize = True
         Me.lblModelNumber.Location = New System.Drawing.Point(905, 122)
         Me.lblModelNumber.Name = "lblModelNumber"
-        Me.lblModelNumber.Size = New System.Drawing.Size(73, 13)
+        Me.lblModelNumber.Size = New System.Drawing.Size(76, 13)
         Me.lblModelNumber.TabIndex = 13
-        Me.lblModelNumber.Text = "ModelNumber"
+        Me.lblModelNumber.Text = "Model Number"
         '
         'cmbModelNumber
         '

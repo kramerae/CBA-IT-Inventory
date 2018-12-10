@@ -460,8 +460,8 @@ Public Class frmEmployeeDashboard
             cmbSearchADGroup.DropDownStyle = ComboBoxStyle.DropDown
             cmbSearchADGroup.AutoCompleteSource = AutoCompleteSource.ListItems
 
-            'LoadComboBox(cmbSearchADGroup, "qryCBOSearchADGroup_Populate")
-            'cboSearchADGroups.SelectedIndex = 0
+            LoadComboBox(cmbSearchADGroup, "qryCBOSearchADGroup_Populate")
+            cmbSearchADGroup.SelectedIndex = 0
         Catch ex As Exception
             HandleException(Me.Name, ex)
         Finally

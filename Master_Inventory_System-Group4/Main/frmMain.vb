@@ -212,11 +212,11 @@ Public Class frmMain
     Private Sub NewToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem3.Click
         Dim frmRefSoftware As frmSoftware = Nothing
         Try
-            'frmRefSoftware = New frmSoftware()
-            'frmRefSoftware.Name = "SoftwareNew"
-            'frmRefSoftware.Tag = "Software - New"
-            ''frmRefSoftware.Software = 0
-            'frmMDIChildAdd(frmRefSoftware)
+            frmRefSoftware = New frmSoftware()
+            frmRefSoftware.Name = "SoftwareNew"
+            frmRefSoftware.Tag = "Software - New"
+            frmRefSoftware.Software = 0
+            frmMDIChildAdd(frmRefSoftware)
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
