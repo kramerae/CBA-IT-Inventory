@@ -65,6 +65,7 @@ Partial Class frmAssignEquipment
         Me.btnCancel.TabIndex = 4
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.Visible = False
         '
         'btnSave
         '

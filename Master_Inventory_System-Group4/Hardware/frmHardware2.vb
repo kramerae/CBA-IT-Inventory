@@ -59,6 +59,7 @@ Public Class frmHardware2
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
             Hardware_Save()
+            MsgBox("Update Successful.", MsgBoxStyle.Exclamation, "Validation Message")
         Catch ex As Exception
             HandleException(Me.Name, ex)
         End Try
@@ -69,7 +70,6 @@ Public Class frmHardware2
             frmHardware2Assign.Hardware = m_lngHardwareID
             frmHardware2Assign.Employee = m_lngEmployeeID
             frmHardware2Assign.ShowDialog()
-
             Hardware_Save()
         Catch ex As Exception
             HandleException(Me.Name, ex)
